@@ -17,16 +17,18 @@ public class TestStudent {
         Student s4 = new Student("Mike", 3, "beginner", 26, "male");
         Student s5 = new Student("Peter", 2, "experienced", 27, "male");
 
-        s1.printStudent();
-        s2.printStudent();
-        s3.printStudent();
-        s4.printStudent();
-        s5.printStudent();
+        System.out.println(s1.toString());
+        System.out.println(s2.toString());
+        System.out.println(s3.toString());
+        System.out.println(s4.toString());
+        System.out.println(s5.toString());
+
+
 
         s1.setProficiencyInJava("advanced");
         s4.setGroup(2);
 
-        s1.printStudent();
-        s4.printStudent();
+        System.out.println(s1.toString());
+        System.out.println(s4.toString());
     }
 }

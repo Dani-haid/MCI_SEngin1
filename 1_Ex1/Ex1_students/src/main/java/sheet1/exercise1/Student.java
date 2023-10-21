@@ -71,15 +71,9 @@ public class Student {
         this.gender = gender;
     }
 
-
-    public String toString(int number){
-        String mystring = String.valueOf(number);
-        return mystring;
-    }
-
-    public void printStudent(){
-        System.out.println("Name:"+ name + ", Group: " + group + ", profInJava: "
-                + proficiencyInJava + ", StudentId: " + studentId + ", Gender: " + gender);
+    public String toString(){
+        return "Name:"+ name + ", Group: " + group + ", profInJava: "
+                + proficiencyInJava + ", StudentId: " + studentId + ", Gender: " + gender;
     }
 }
 
