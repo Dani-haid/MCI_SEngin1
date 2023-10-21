@@ -1,4 +1,5 @@
 package sheet1.exercise1;
+import java.util.Arrays;
 
 /*
 Create a class Student with data fields name, group,
@@ -20,6 +21,13 @@ To do so, you must override the equals() method in class Student.
 Test your method equals() in the main() in TestStudent
 */
 
+/*
+In Student class, add data members to store all the grades
+for all the courses taken by a student. Also implement
+a method float averageNote() that returns the average
+grade over all courses taken by a student
+*/
+
 import java.util.Objects;
 
 public class Student {
@@ -28,6 +36,7 @@ public class Student {
     private String proficiencyInJava;
     private int studentId;
     private String gender;
+    private int[] grades; //stetting grades is static, to be optimized
 
     //default constructor
     Student(){
@@ -40,13 +49,22 @@ public class Student {
         this.group = group;
     }
 
-    //full constructor
     Student(String name, int group, String prof, int Id, String gender){
         this.name = name;
         this.group = group;
         proficiencyInJava = prof;
         studentId = Id;
         this.gender = gender;
+    }
+
+    //full constructor
+    Student(String name, int group, String prof, int Id, String gender, int[] grades){
+        this.name = name;
+        this.group = group;
+        proficiencyInJava = prof;
+        studentId = Id;
+        this.gender = gender;
+        this.grades = grades;
     }
 
     // getter and setter
@@ -86,6 +104,13 @@ public class Student {
         this.gender = gender;
     }
 
+    public int getGrades(int index) {
+        if(grades.length != 0){
+            return this.grades[index];
+        }
+        return 0;
+    }
+
     public String toString(){
         return "Name:"+ name + ", Group: " + group + ", profInJava: "
                 + proficiencyInJava + ", StudentId: " + studentId + ", Gender: " + gender;
@@ -112,7 +137,6 @@ public class Student {
             System.out.println("is the same object");
             return true;
         }
-
         // cast
         Student anotherStudent = (Student) obj;
 
@@ -123,6 +147,30 @@ public class Student {
         System.out.println("Objects don't equals each other");
         return false;
     }
+
+    public void printGrades(){
+        if(grades.length != 0) {
+            for (int element : this.grades) {
+                System.out.println("Grade: " + element);
+            }
+        }
+    }
+
+    public float averageNote(){
+        if(grades == null || grades.length == 0){
+            System.out.println("No grades found.\n");
+            return 0;
+        }
+            float average = 0;
+            float sum = 0;
+            for (int element: this.grades) {
+                sum += element;
+            }
+            average = sum / (this.grades.length);
+            System.out.println("Average Grade: " + average);
+            return average;
+    }
+
 
 
 }

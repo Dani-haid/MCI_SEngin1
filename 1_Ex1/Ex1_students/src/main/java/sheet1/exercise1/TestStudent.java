@@ -11,9 +11,11 @@ with the methods applied to single objects
 
 public class TestStudent {
     public static void main(String[] args) {
-        Student s1 = new Student("Daniela", 3, "beginner", 23, "female");
+        int[] s1Grades = {1,3,5};
+        int[] s3Grades = {2,1,4};
+        Student s1 = new Student("Daniela", 3, "beginner", 23, "female", s1Grades);
         Student s2 = new Student("Hans", 2, "advanced", 24, "male");
-        Student s3 = new Student("Sarah", 3, "intermediate", 25, "female");
+        Student s3 = new Student("Sarah", 3, "intermediate", 25, "female", s3Grades);
         Student s4 = new Student("Mike", 3, "beginner", 26, "male");
         Student s5 = new Student("Peter", 2, "experienced", 27, "male");
         Student s6 = new Student("Peter", 2, "experienced", 27, "male");
@@ -36,5 +38,10 @@ public class TestStudent {
         s4.equals(s3);
         s5.equals(s6);
         s5.equals(s5);
+
+        s1.printGrades();
+        s1.averageNote();
+
+        s2.averageNote();
     }
 }
