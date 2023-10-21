@@ -28,9 +28,17 @@ a method float averageNote() that returns the average
 grade over all courses taken by a student
 */
 
+/*
+Add a static field in class Student to keep track of the number
+of Student objects created. Anytime you create a new Student object,
+you should print out a message like e.g. “New Student added!
+There are a total of 6 students” when the sixth Student object is created
+*/
+
 import java.util.Objects;
 
 public class Student {
+    private static int totalNumberOfStudents = 0;
     private String name;
     private int group;
     private String proficiencyInJava;
@@ -40,18 +48,19 @@ public class Student {
 
     //default constructor
     Student(){
-        //System.out.println("Please insert more values.\n");
+        Student.totalNumberOfStudents++;
+        printNewStudent();
     }
 
     //constructor
     Student(String name, int group){
+        this();
         this.name = name;
         this.group = group;
     }
 
     Student(String name, int group, String prof, int Id, String gender){
-        this.name = name;
-        this.group = group;
+        this(name, group);
         proficiencyInJava = prof;
         studentId = Id;
         this.gender = gender;
@@ -59,11 +68,7 @@ public class Student {
 
     //full constructor
     Student(String name, int group, String prof, int Id, String gender, int[] grades){
-        this.name = name;
-        this.group = group;
-        proficiencyInJava = prof;
-        studentId = Id;
-        this.gender = gender;
+        this(name, group, prof, Id, gender);
         this.grades = grades;
     }
 
@@ -169,6 +174,10 @@ public class Student {
             average = sum / (this.grades.length);
             System.out.println("Average Grade: " + average);
             return average;
+    }
+
+    private void printNewStudent(){
+        System.out.println("New Student added! There are a total of " + Student.totalNumberOfStudents +  " students");
     }
 
 
