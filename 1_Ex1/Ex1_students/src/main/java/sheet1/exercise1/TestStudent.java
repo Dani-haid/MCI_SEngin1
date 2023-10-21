@@ -16,6 +16,7 @@ public class TestStudent {
         Student s3 = new Student("Sarah", 3, "intermediate", 25, "female");
         Student s4 = new Student("Mike", 3, "beginner", 26, "male");
         Student s5 = new Student("Peter", 2, "experienced", 27, "male");
+        Student s6 = new Student("Peter", 2, "experienced", 27, "male");
 
         System.out.println(s1.toString());
         System.out.println(s2.toString());
@@ -30,7 +31,10 @@ public class TestStudent {
         System.out.println(s4.toString());
 
         s5.hasSameFluencyInJava(s1);
-
         s2.hasSameFluencyInJava(s1);
+
+        s4.equals(s3);
+        s5.equals(s6);
+        s5.equals(s5);
     }
 }

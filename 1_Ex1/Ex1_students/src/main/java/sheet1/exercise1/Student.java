@@ -13,6 +13,15 @@ that checks whether two students have the same
 proficiency in Java.Test it in the TestStudent class
 */
 
+/*
+In Student class, implement a method that checks
+whether two students are the same student.
+To do so, you must override the equals() method in class Student.
+Test your method equals() in the main() in TestStudent
+*/
+
+import java.util.Objects;
+
 public class Student {
     private String name;
     private int group;
@@ -94,5 +103,27 @@ public class Student {
         return false;
 
     }
+
+    @Override
+    public boolean equals(Object obj){
+        
+        // Object is compared with itself
+        if(this == obj){
+            System.out.println("is the same object");
+            return true;
+        }
+
+        // cast
+        Student anotherStudent = (Student) obj;
+
+        if(Objects.equals(this.name, anotherStudent.name) && this.studentId == anotherStudent.studentId){
+            System.out.println("Name and Id are the same");
+            return true;
+        }
+        System.out.println("Objects don't equals each other");
+        return false;
+    }
+
+
 }
 
