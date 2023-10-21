@@ -23,12 +23,14 @@ public class TestStudent {
         System.out.println(s4.toString());
         System.out.println(s5.toString());
 
-
-
         s1.setProficiencyInJava("advanced");
         s4.setGroup(2);
 
         System.out.println(s1.toString());
         System.out.println(s4.toString());
+
+        s5.hasSameFluencyInJava(s1);
+
+        s2.hasSameFluencyInJava(s1);
     }
 }

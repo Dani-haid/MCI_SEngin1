@@ -7,6 +7,12 @@ Implement a few constructors for the class,
 the getter and setter methods, and the toString() method
 */
 
+/*
+In Student class,add a method boolean hasSameFluencyInJavaAs(Student anotherStudent)
+that checks whether two students have the same
+proficiency in Java.Test it in the TestStudent class
+*/
+
 public class Student {
     private String name;
     private int group;
@@ -74,6 +80,19 @@ public class Student {
     public String toString(){
         return "Name:"+ name + ", Group: " + group + ", profInJava: "
                 + proficiencyInJava + ", StudentId: " + studentId + ", Gender: " + gender;
+    }
+
+    public boolean hasSameFluencyInJava(Student anotherStudent){
+        // if sout should be in main
+        //return this.proficiencyInJava.equals(anotherStudent.proficiencyInJava);
+
+        if(this.proficiencyInJava.equals(anotherStudent.proficiencyInJava)){
+            System.out.println(this.name + " has same fluency in Java than " + anotherStudent.name + ". Fluency of both is " + this.proficiencyInJava);
+            return true;
+        }
+        System.out.println("Fluency in Java is NOT the same! " + this.name + ": " + this.proficiencyInJava + ", " + anotherStudent.name + ": "+ anotherStudent.proficiencyInJava);
+        return false;
+
     }
 }
 
