@@ -1,5 +1,6 @@
 package sheet1.exercise1;
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /*
 Create a class Student with data fields name, group,
@@ -35,6 +36,7 @@ you should print out a message like e.g. “New Student added!
 There are a total of 6 students” when the sixth Student object is created
 */
 
+import java.util.Map;
 import java.util.Objects;
 
 public class Student {
@@ -44,7 +46,8 @@ public class Student {
     private String proficiencyInJava;
     private int studentId;
     private String gender;
-    private int[] grades; //stetting grades is static, to be optimized
+    //private int[] grades; //stetting grades is static, to be optimized
+    private Map<String, Integer> grades; // string = course, Integer = grade
 
     //default constructor
     Student(){
@@ -57,19 +60,15 @@ public class Student {
         this();
         this.name = name;
         this.group = group;
+        this.grades = new HashMap<>();
     }
 
+    //full constructor
     Student(String name, int group, String prof, int Id, String gender){
         this(name, group);
         proficiencyInJava = prof;
         studentId = Id;
         this.gender = gender;
-    }
-
-    //full constructor
-    Student(String name, int group, String prof, int Id, String gender, int[] grades){
-        this(name, group, prof, Id, gender);
-        this.grades = grades;
     }
 
     // getter and setter
@@ -109,11 +108,13 @@ public class Student {
         this.gender = gender;
     }
 
-    public int getGrades(int index) {
-        if(grades.length != 0){
-            return this.grades[index];
+    public void addGrades(String course, int grade){
+        if(grades != null){
+            grades.put(course, grade);
+        }else{
+            this.grades = new HashMap<>();
+            grades.put(course, grade);
         }
-        return 0;
     }
 
     public String toString(){
@@ -136,7 +137,6 @@ public class Student {
 
     @Override
     public boolean equals(Object obj){
-        
         // Object is compared with itself
         if(this == obj){
             System.out.println("is the same object");
@@ -154,26 +154,34 @@ public class Student {
     }
 
     public void printGrades(){
-        if(grades.length != 0) {
-            for (int element : this.grades) {
-                System.out.println("Grade: " + element);
+        if(grades != null) {
+            System.out.println("Printing all grades for student " + name);
+            for (Map.Entry<String, Integer> elements : grades.entrySet()){
+                String course = elements.getKey();
+                int grade = elements.getValue();
+                System.out.println(course + ": " + grade);
             }
         }
     }
 
     public float averageNote(){
-        if(grades == null || grades.length == 0){
+        if(grades == null){
             System.out.println("No grades found.\n");
             return 0;
         }
             float average = 0;
             float sum = 0;
-            for (int element: this.grades) {
+            int count = 0;
+            for (int element: grades.values()) {
                 sum += element;
+                count++;
             }
-            average = sum / (this.grades.length);
-            System.out.println("Average Grade: " + average);
-            return average;
+            if(count > 0){
+                average = sum / count;
+                System.out.println("Average Grade for student " + name + ": " + average);
+                return average;
+            }
+            return 0;
     }
 
     private void printNewStudent(){
