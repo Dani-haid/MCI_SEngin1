@@ -154,7 +154,7 @@ public class Student {
     }
 
     public void printGrades(){
-        if(grades != null) {
+        if(grades != null && grades.size()!= 0) {
             System.out.println("Printing all grades for student " + name);
             for (Map.Entry<String, Integer> elements : grades.entrySet()){
                 String course = elements.getKey();
@@ -165,10 +165,11 @@ public class Student {
     }
 
     public float averageNote(){
-        if(grades == null){
+        if(grades == null || grades.size() == 0){
             System.out.println("No grades found.\n");
             return 0;
         }
+
             float average = 0;
             float sum = 0;
             int count = 0;

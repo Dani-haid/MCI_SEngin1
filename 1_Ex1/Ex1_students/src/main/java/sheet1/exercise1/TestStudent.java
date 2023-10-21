@@ -48,5 +48,6 @@ public class TestStudent {
         s1.averageNote();
         s2.averageNote();
         s5.averageNote();
+        s6.averageNote();
     }
 }
