@@ -39,15 +39,22 @@ There are a total of 6 students” when the sixth Student object is created
 import java.util.Map;
 import java.util.Objects;
 
+enum proficencyLevel {
+    BEGINNER,
+    ADVANCED,
+    INTERMEDIATE,
+    EXPERIENCED
+}
+
 public class Student {
     private static int totalNumberOfStudents = 0;
     private String name;
     private int group;
-    private String proficiencyInJava;
+    private proficencyLevel proficiencyInJava;
     private int studentId;
     private String gender;
     //private int[] grades; //stetting grades is static, to be optimized
-    private Map<String, Integer> grades; // string = course, Integer = grade
+    private Map<String, Integer> grades = new HashMap<>(); // string = course, Integer = grade
 
     //default constructor
     Student(){
@@ -60,14 +67,13 @@ public class Student {
         this();
         this.name = name;
         this.group = group;
-        this.grades = new HashMap<>();
     }
 
     //full constructor
-    Student(String name, int group, String prof, int Id, String gender){
+    Student(String name, int group, proficencyLevel prof, int id, String gender){
         this(name, group);
         proficiencyInJava = prof;
-        studentId = Id;
+        studentId = id;
         this.gender = gender;
     }
 
@@ -84,11 +90,11 @@ public class Student {
     public void setGroup(int group) {
         this.group = group;
     }
-    public String getProficiencyInJava() {
+    public proficencyLevel getProficiencyInJava() {
         return proficiencyInJava;
     }
 
-    public void setProficiencyInJava(String proficiencyInJava) {
+    public void setProficiencyInJava(proficencyLevel proficiencyInJava) {
         this.proficiencyInJava = proficiencyInJava;
     }
 
@@ -108,13 +114,8 @@ public class Student {
         this.gender = gender;
     }
 
-    public void addGrades(String course, int grade){
-        if(grades != null){
-            grades.put(course, grade);
-        }else{
-            this.grades = new HashMap<>();
-            grades.put(course, grade);
-        }
+    public void addGrade(String course, int grade){
+        grades.put(course, grade);
     }
 
     public String toString(){
@@ -142,6 +143,11 @@ public class Student {
             System.out.println("is the same object");
             return true;
         }
+
+        // check if object ist an instance of student
+        if(!(obj instanceof Student)){
+            return false;
+        }
         // cast
         Student anotherStudent = (Student) obj;
 
@@ -154,7 +160,7 @@ public class Student {
     }
 
     public void printGrades(){
-        if(grades != null && grades.size()!= 0) {
+        if(grades.size()!= 0) {
             System.out.println("Printing all grades for student " + name);
             for (Map.Entry<String, Integer> elements : grades.entrySet()){
                 String course = elements.getKey();
@@ -165,24 +171,21 @@ public class Student {
     }
 
     public float averageNote(){
-        if(grades == null || grades.size() == 0){
+        int numberOfGrades = grades.size();
+        if(numberOfGrades <= 0){
             System.out.println("No grades found.\n");
             return 0;
         }
 
-            float average = 0;
-            float sum = 0;
-            int count = 0;
-            for (int element: grades.values()) {
+        float average = 0;
+        int sum = 0;
+        for (int element: grades.values()) {
                 sum += element;
-                count++;
-            }
-            if(count > 0){
-                average = sum / count;
-                System.out.println("Average Grade for student " + name + ": " + average);
-                return average;
-            }
-            return 0;
+        }
+
+        average = sum / numberOfGrades;
+        System.out.println("Average Grade for student " + name + ": " + average);
+        return average;
     }
 
     private void printNewStudent(){

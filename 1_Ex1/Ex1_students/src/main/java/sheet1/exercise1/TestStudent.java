@@ -11,19 +11,19 @@ with the methods applied to single objects
 
 public class TestStudent {
     public static void main(String[] args) {
-        Student s1 = new Student("Daniela", 3, "beginner", 23, "female");
-        s1.addGrades("Science", 5);
-        s1.addGrades("Math", 1);
-        Student s2 = new Student("Hans", 2, "advanced", 24, "male");
-        s2.addGrades("Math", 3);
-        s2.addGrades("History", 1);
-        s2.addGrades("Music", 5);
-        Student s3 = new Student("Sarah", 3, "intermediate", 25, "female");
-        Student s4 = new Student("Mike", 3, "beginner", 26, "male");
-        Student s5 = new Student("Peter", 2, "experienced", 27, "male");
-        s5.addGrades("Art", 2);
-        s5.addGrades("Economics", 1);
-        Student s6 = new Student("Peter", 2, "experienced", 27, "male");
+        Student s1 = new Student("Daniela", 3, proficencyLevel.BEGINNER, 23, "female");
+        s1.addGrade("Science", 5);
+        s1.addGrade("Math", 1);
+        Student s2 = new Student("Hans", 2, proficencyLevel.ADVANCED, 24, "male");
+        s2.addGrade("Math", 3);
+        s2.addGrade("History", 1);
+        s2.addGrade("Music", 5);
+        Student s3 = new Student("Sarah", 3, proficencyLevel.INTERMEDIATE, 25, "female");
+        Student s4 = new Student("Mike", 3, proficencyLevel.BEGINNER, 26, "male");
+        Student s5 = new Student("Peter", 2, proficencyLevel.EXPERIENCED, 27, "male");
+        s5.addGrade("Art", 2);
+        s5.addGrade("Economics", 1);
+        Student s6 = new Student("Peter", 2, proficencyLevel.EXPERIENCED, 27, "male");
 
         System.out.println(s1.toString());
         System.out.println(s2.toString());
@@ -31,7 +31,7 @@ public class TestStudent {
         System.out.println(s4.toString());
         System.out.println(s5.toString());
 
-        s1.setProficiencyInJava("advanced");
+        s1.setProficiencyInJava(proficencyLevel.ADVANCED);
         s4.setGroup(2);
 
         System.out.println(s1.toString());
