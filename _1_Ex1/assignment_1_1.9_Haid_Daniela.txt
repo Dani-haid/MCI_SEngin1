@@ -1,0 +1,52 @@
+Assignment 1 / Übungszettel 1
+
+
+Daniela Haid
+
+
+
+
+
+9. Let’s imagine we have the following interface and class:
+
+
+Nehmen wir an, wir haben das folgende Interface und Klasse:
+
+
+public interface StudentInteface {
+// here my interface declaration
+}
+
+
+public class Student implements StudentInterface {
+        // here my class implementation
+}
+
+
+Given the instructions:
+
+
+Angesichts der folgenden Anweisungen:
+
+
+
+StudentInterface sInt;
+Student student = new Student();
+
+
+
+
+discuss the following Java instructions:
+
+
+besprechen Sie die folgenden Java-Anweisungen:
+
+
+Antworten:
+
+
+* sInt = null; → es wird ein “null/nichts” der Variable sInt (dem Interface) zugewiesen. D.h. es referenziert zu keinem Objekt im Speicher -> es zeigt auf NICHTS. Dies hat denselben Effekt, wie die obige Angabe “StudenInterface sInt”;
+* sInt = student; → Hier wird eine Instanz der Student-Klasse auf die Variable sInt (dem Interface) referenziert. d.h. sInt zeigt auf ein Objekt von Student. (dies sind nur pointer) Dies ist möglich
+* student = sInt; → Hier wird versucht das Interface auf die Instanz der Klasse Student zu referenzieren. Dies ist aber NICHT möglich, da student vom StudentInterface implementiert wurde. 
+* sInt = new StudentInterface(); → hier wird versucht eine neue Instanz des StudentInterface() zu erzeugen. das Java Interface darf aber NICHT mit new instanziert werden!
+* sInt.someMethodInStudentInterface(); → wenn sInt auf student zeigt (wie oben) dann wird hier die someMethodInStudentInterface-Methode für student aufgerufen
