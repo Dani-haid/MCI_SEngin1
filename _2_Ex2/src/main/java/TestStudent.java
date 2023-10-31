@@ -1,29 +1,17 @@
-//package edu.mci.sweng1.week1;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  * Test the student Class.
- * Note that CPR numbers are missing or only partially filled in, since CPR
- * numbers are hard to come by (and sensitive, in any case).
- * @author andrea
+
  */
 public class TestStudent {
 
-    /**
-     * If "static" is removed the class is not runnable.
-     * One can only execute methods directly on a class if the method is static,
-     * and the JVM's execution entry point is on the class itself, as no objects
-     * have been created yet.
-     * The name "main" is the JVM's execution entry point in a particular class.
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         // Assignment 1, Exercise 2
+        // array with Student Objects
         Student[] students = {
-          new Student("Ib One", 1, 9, "123456-0000", Student.Gender.Male),
+          new Student("Ib One", 1, 9, 1, Student.Gender.Male),
           new Student("Lisa Two", 1, 2, Student.Gender.Female),
           new Student("Ole Threee", 2, 2, Student.Gender.Male),
           new Student("Leo Four", 2, 3, Student.Gender.Male),
@@ -42,29 +30,24 @@ public class TestStudent {
         else System.out.println(students[1].getName() + " does not have same proficiency as " +
             students[2].getName() + " which is actually wrong!");
 
-        Student testStudent = new Student("Ib One", 1, 9, null, Student.Gender.Male);
+        Student testStudent = new Student("Ib One", 1, 9, 4, Student.Gender.Male);
         if (students[0].equals(testStudent))
             System.out.println(students[0] + "\nis equal to\n" + testStudent + " which is actually wrong!");
         else System.out.println(students[0] + "\nis not equal to\n" + testStudent);
 
-        testStudent = new Student("Ib One", 1, 9, "123456-0000", Student.Gender.Male);
+        testStudent = new Student("Ib One", 1, 9, 5, Student.Gender.Male);
         if (students[0].equals(testStudent))
             System.out.println(students[0] + "\nis equal to\n" + testStudent);
         else System.out.println(students[0] + "\nis not equal to\n" + testStudent + " which is actually wrong!");
 
-        testStudent = new Student("Ib One", 1, 9, "123456-0000", Student.Gender.Female);
+        testStudent = new Student("Ib One", 1, 9, 7, Student.Gender.Female);
         if (students[0].equals(testStudent))
             System.out.println(students[0] + "\nis equal to\n" + testStudent + " which is actually wrong!");
         else System.out.println(students[0] + "\nis not equal to\n" + testStudent);
 
-  
-        StudentCollection studentCollection = new StudentCollection(students);
-        studentCollection.studentsWithProficiency(5);
 
-        Student[] studentMatches = studentCollection.studentsWithProficiencyArray(5);
-        System.out.println();
         
-        testStudent = new Student("Ib One", 1, 9, "123456-0000", Student.Gender.Male);
+        testStudent = new Student("Ib One", 1, 9, 8, Student.Gender.Male);
         testStudent.getCourseGrades().add(new CourseGrade(CourseGrade.Course.GPN, 12));
         testStudent.getCourseGrades().add(new CourseGrade(CourseGrade.Course.OOP, 7));
 
