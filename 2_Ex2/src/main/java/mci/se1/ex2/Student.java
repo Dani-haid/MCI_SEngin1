@@ -15,9 +15,10 @@ public class Student implements Cloneable {
     private List<CourseGrade> courseGrades = new ArrayList<CourseGrade>();
 
     public Student(){
-        Student.totalNumberOfStudents++;
-        printNewStudent();
+       Student.totalNumberOfStudents++;
+       printNewStudent();
     }
+
 
     /** Full constructor
      * @param name Full name of the student

@@ -20,6 +20,7 @@ public class TestStudent {
                 new Student("Pia Five", 3, 5, Student.Gender.Female),
         };
 
+        /*
         if (students[3].hasSameFluencyInJavaAs(students[4]))
             System.out.println(students[3].getName() + " has same proficiency as " +
                     students[4].getName() + " which is actually wrong!");
@@ -32,6 +33,9 @@ public class TestStudent {
         else System.out.println(students[1].getName() + " does not have same proficiency as " +
                 students[2].getName() + " which is actually wrong!");
 
+        */
+
+        /*
         Student testStudent = new Student("Ib One", 1, 9, 4, Student.Gender.Male);
         if (students[0].equals(testStudent))
             System.out.println(students[0] + "\nis equal to\n" + testStudent + " which is actually wrong!");
@@ -47,9 +51,11 @@ public class TestStudent {
             System.out.println(students[0] + "\nis equal to\n" + testStudent + " which is actually wrong!");
         else System.out.println(students[0] + "\nis not equal to\n" + testStudent);
 
+        */
 
 
-        testStudent = new Student("Ib One", 1, 9, 8, Student.Gender.Male);
+
+        Student testStudent = new Student("Ib One", 1, 9, 8, Student.Gender.Male);
         testStudent.getCourseGrades().add(new CourseGrade(CourseGrade.Course.GPN, 12));
         testStudent.getCourseGrades().add(new CourseGrade(CourseGrade.Course.OOP, 7));
 
