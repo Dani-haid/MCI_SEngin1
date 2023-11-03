@@ -53,6 +53,13 @@ public class TestStudent {
         testStudent.getCourseGrades().add(new CourseGrade(CourseGrade.Course.GPN, 12));
         testStudent.getCourseGrades().add(new CourseGrade(CourseGrade.Course.OOP, 7));
 
+        TAStudent tatest = new TAStudent("Testoo", 3, 7, 11, Student.Gender.Female);
+        tatest.setSupportTask(CourseGrade.Course.OOP, "to be done: testTask Description!");
+        tatest.setSupportTask(CourseGrade.Course.GPN, "urgent: take a coffee!");
+
+        tatest.printSupportTasks();
+
+
         try {
             testStudent = (Student)students[0].clone();
         } catch (CloneNotSupportedException cnse) {
