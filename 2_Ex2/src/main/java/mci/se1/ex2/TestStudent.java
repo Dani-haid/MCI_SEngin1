@@ -1,5 +1,6 @@
 package mci.se1.ex2;
 
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,6 +20,8 @@ public class TestStudent {
                 new Student("Leo Four", 2, 3, Student.Gender.Male),
                 new Student("Pia Five", 3, 5, Student.Gender.Female),
         };
+
+        //
 
         /*
         if (students[3].hasSameFluencyInJavaAs(students[4]))
@@ -66,6 +69,13 @@ public class TestStudent {
         tatest.printSupportTasks();
 
         PhDStudent phdTest = new PhDStudent("Phd Student", 4, 9, 22, Student.Gender.Male, Student.Degree.Master, Student.Degree.Doctor, false);
+
+        Scanner scanner = new Scanner(System.in);
+
+        Student abc = new Student(scanner);
+        Student def = new Student(scanner);
+
+        scanner.close();
 
 /*
         try {

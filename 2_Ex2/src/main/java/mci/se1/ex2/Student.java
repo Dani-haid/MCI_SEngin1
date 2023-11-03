@@ -3,6 +3,7 @@ package mci.se1.ex2;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Student implements Cloneable {
     public enum Gender {Unknown, Male, Female}
@@ -15,32 +16,52 @@ public class Student implements Cloneable {
     private static int totalNumberOfStudents = 0;
     private List<CourseGrade> courseGrades = new ArrayList<CourseGrade>();
 
-
     // Full constructor
     public Student(String name, int group, int proficiencyInJava, int studentId, Gender gender) {
         this(name, group, proficiencyInJava, gender);
-
+        System.out.println("Full Konstruktor");
         this.studentId = studentId;
     }
 
     public Student(String name, int group, int proficiencyInJava, Gender gender) {
         this(name);
+        System.out.println("ohne Id Konstruktor");
+
         this.group = group;
         this.proficiencyInJava = proficiencyInJava;
         this.gender = gender;
     }
 
     public Student(String name){
-        this();
+        //this();
+        System.out.println("name Konstruktor");
+
         this.name = name;
+        Student.totalNumberOfStudents++;
         printNewStudent();
     }
 
     public Student(){
         Student.totalNumberOfStudents++;
+        printNewStudent();
     }
 
+    public Student(Scanner scanner){
+        System.out.println("New Student will be added, please insert the following values:\n");
+        System.out.println("Name of the Student: ");
+        this.name = scanner.nextLine();
 
+        System.out.println("Group: ");
+        this.group = scanner.nextInt();
+
+        System.out.println("Proficeny in Java: ");
+        this.proficiencyInJava = scanner.nextInt();
+
+        scanner.nextLine();
+
+        Student.totalNumberOfStudents++;
+        printNewStudent();
+    }
 
 
     @Override
