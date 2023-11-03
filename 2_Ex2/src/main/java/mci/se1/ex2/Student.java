@@ -9,53 +9,33 @@ public class Student implements Cloneable {
     private String name;
     private int group;
     private int proficiencyInJava;
-    private int studentId;
+    private int studentId = 0;
     private Gender gender = Gender.Unknown;
     private static int totalNumberOfStudents = 0;
     private List<CourseGrade> courseGrades = new ArrayList<CourseGrade>();
 
-    public Student(){
-       Student.totalNumberOfStudents++;
-       printNewStudent();
-    }
 
-
-    /** Full constructor
-     * @param name Full name of the student
-     * @param group group number
-     * @param proficiencyInJava An integer from 1 - 10
-     * @param gender One of the enum value of Gender
-     * @param studentId studentId
-     */
+    // Full constructor
     public Student(String name, int group, int proficiencyInJava, int studentId, Gender gender) {
-        this();
+        this(name, group, proficiencyInJava, gender);
 
-        this.name = name;
-        this.group = group;
-        this.proficiencyInJava = proficiencyInJava;
         this.studentId = studentId;
-        this.gender = gender;
     }
 
-    /**
-     * Useful Constructor for this assignment, without StudentId
-     * @param name Full name of the student
-     */
     public Student(String name, int group, int proficiencyInJava, Gender gender) {
         this();
-
         this.name = name;
         this.group = group;
         this.proficiencyInJava = proficiencyInJava;
         this.gender = gender;
-        this.studentId = 0;
+    }
+
+    public Student(){
+        Student.totalNumberOfStudents++;
+        printNewStudent();
     }
 
 
-    /**
-     * Create readable representation of this object
-     * @return String representation of this Student
-     */
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder("Student:{");
@@ -147,7 +127,7 @@ public class Student implements Cloneable {
         return getProficiencyInJava() == anotherStudent.getProficiencyInJava();
     }
 
-    private void printNewStudent(){
+    protected void printNewStudent(){
         System.out.println("New Student added! There are a total of " + Student.totalNumberOfStudents +  " students");
     }
 

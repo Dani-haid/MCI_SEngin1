@@ -20,6 +20,12 @@ public class TAStudent extends Student {
         System.out.println("constructor TAStudent");
     }
 
+    @Override
+    protected void printNewStudent(){
+        super.printNewStudent();
+        System.out.println("New TAStudent created.");
+    }
+
     public void printSupportTasks(){
         for(SupportTask t : supportTasks){
             t.printTask();
