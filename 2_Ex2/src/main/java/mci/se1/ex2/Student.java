@@ -24,17 +24,23 @@ public class Student implements Cloneable {
     }
 
     public Student(String name, int group, int proficiencyInJava, Gender gender) {
-        this();
-        this.name = name;
+        this(name);
         this.group = group;
         this.proficiencyInJava = proficiencyInJava;
         this.gender = gender;
     }
 
-    public Student(){
-        Student.totalNumberOfStudents++;
+    public Student(String name){
+        this();
+        this.name = name;
         printNewStudent();
     }
+
+    public Student(){
+        Student.totalNumberOfStudents++;
+    }
+
+
 
 
     @Override
@@ -129,7 +135,7 @@ public class Student implements Cloneable {
     }
 
     protected void printNewStudent(){
-        System.out.println("New Student added! There are a total of " + Student.totalNumberOfStudents +  " students");
+        System.out.println("New Student " + this.name + " added! There are a total of " + Student.totalNumberOfStudents +  " students");
     }
 
     /** Getter

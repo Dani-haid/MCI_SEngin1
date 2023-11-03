@@ -25,6 +25,12 @@ public class PhDStudent extends Student {
         }
     }
 
+    @Override
+    protected void printNewStudent(){
+        super.printNewStudent();
+        System.out.println("New PhdStudent created.");
+    }
+
     public Degree getActualDegree() {
         return actualDegree;
     }

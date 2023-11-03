@@ -65,7 +65,9 @@ public class TestStudent {
 
         tatest.printSupportTasks();
 
+        PhDStudent phdTest = new PhDStudent("Phd Student", 4, 9, 22, Student.Gender.Male, Student.Degree.Master, Student.Degree.Doctor, false);
 
+/*
         try {
             testStudent = (Student)students[0].clone();
         } catch (CloneNotSupportedException cnse) {
@@ -83,6 +85,8 @@ public class TestStudent {
         } catch (CloneNotSupportedException ex) {
             Logger.getLogger(TestStudent.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        */
 
 
         // Generate javadoc: Run -> Generate Javadoc.
