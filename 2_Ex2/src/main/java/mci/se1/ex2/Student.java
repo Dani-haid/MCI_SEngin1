@@ -6,6 +6,7 @@ import java.util.Objects;
 
 public class Student implements Cloneable {
     public enum Gender {Unknown, Male, Female}
+    public enum Degree {Unknown, Bachelor, Master, Doctor}
     private String name;
     private int group;
     private int proficiencyInJava;
