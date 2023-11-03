@@ -1,3 +1,5 @@
+package mci.se1.ex2;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -34,7 +36,7 @@ public class Student implements Cloneable {
         this.gender = gender;
     }
 
-   /**
+    /**
      * Useful Constructor for this assignment, without StudentId
      * @param name Full name of the student
      */
@@ -120,18 +122,18 @@ public class Student implements Cloneable {
     protected Object clone() throws CloneNotSupportedException {
 
         try {
-                Student myClone = new Student();
-                super.clone();
-                myClone.name = this.name;
-                myClone.group = this.group;
-                myClone.proficiencyInJava = this.proficiencyInJava;
-                myClone.gender = this.gender;
-                myClone.studentId = this.studentId;
-                return(myClone);
-            }
-            catch (CloneNotSupportedException ex) {
-                throw new InternalError(ex.toString());
-            }
+            Student myClone = new Student();
+            super.clone();
+            myClone.name = this.name;
+            myClone.group = this.group;
+            myClone.proficiencyInJava = this.proficiencyInJava;
+            myClone.gender = this.gender;
+            myClone.studentId = this.studentId;
+            return(myClone);
+        }
+        catch (CloneNotSupportedException ex) {
+            throw new InternalError(ex.toString());
+        }
 
     }
 
@@ -219,6 +221,4 @@ public class Student implements Cloneable {
     public void setCourseGrades(List<CourseGrade> courseGrades) {
         this.courseGrades = courseGrades;
     }
-
-
 }

@@ -1,3 +1,5 @@
+package mci.se1.ex2;
+
 /**
  * Assignment 1, Exercise 7
  * Represents a course grade. The courses themselves are just represented

@@ -1,3 +1,5 @@
+package mci.se1.ex2;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -11,24 +13,24 @@ public class TestStudent {
         // Assignment 1, Exercise 2
         // array with Student Objects
         Student[] students = {
-          new Student("Ib One", 1, 9, 1, Student.Gender.Male),
-          new Student("Lisa Two", 1, 2, Student.Gender.Female),
-          new Student("Ole Threee", 2, 2, Student.Gender.Male),
-          new Student("Leo Four", 2, 3, Student.Gender.Male),
-          new Student("Pia Five", 3, 5, Student.Gender.Female),
+                new Student("Ib One", 1, 9, 1, Student.Gender.Male),
+                new Student("Lisa Two", 1, 2, Student.Gender.Female),
+                new Student("Ole Threee", 2, 2, Student.Gender.Male),
+                new Student("Leo Four", 2, 3, Student.Gender.Male),
+                new Student("Pia Five", 3, 5, Student.Gender.Female),
         };
 
         if (students[3].hasSameFluencyInJavaAs(students[4]))
-                System.out.println(students[3].getName() + " has same proficiency as " +
-            students[4].getName() + " which is actually wrong!");
+            System.out.println(students[3].getName() + " has same proficiency as " +
+                    students[4].getName() + " which is actually wrong!");
         else System.out.println(students[3].getName() + " does not have same proficiency as " +
-            students[4].getName());
+                students[4].getName());
 
         if (students[1].hasSameFluencyInJavaAs(students[2]))
-                System.out.println(students[1].getName() + " has same proficiency as " +
-            students[2].getName());
+            System.out.println(students[1].getName() + " has same proficiency as " +
+                    students[2].getName());
         else System.out.println(students[1].getName() + " does not have same proficiency as " +
-            students[2].getName() + " which is actually wrong!");
+                students[2].getName() + " which is actually wrong!");
 
         Student testStudent = new Student("Ib One", 1, 9, 4, Student.Gender.Male);
         if (students[0].equals(testStudent))
@@ -46,7 +48,7 @@ public class TestStudent {
         else System.out.println(students[0] + "\nis not equal to\n" + testStudent);
 
 
-        
+
         testStudent = new Student("Ib One", 1, 9, 8, Student.Gender.Male);
         testStudent.getCourseGrades().add(new CourseGrade(CourseGrade.Course.GPN, 12));
         testStudent.getCourseGrades().add(new CourseGrade(CourseGrade.Course.OOP, 7));
@@ -69,11 +71,9 @@ public class TestStudent {
             Logger.getLogger(TestStudent.class.getName()).log(Level.SEVERE, null, ex);
         }
 
- 
+
         // Generate javadoc: Run -> Generate Javadoc.
-        // The Javadoc has been placed in the "dist/javadoc" directory        
+        // The Javadoc has been placed in the "dist/javadoc" directory
         System.out.println("Done!");
     }
-
-
 }
