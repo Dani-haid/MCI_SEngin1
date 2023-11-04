@@ -17,7 +17,6 @@ public class TAStudent extends Student {
     //constructor calling super()
     public TAStudent(String name, int group, int proficiencyInJava, int studentId, Gender gender){
         super(name, group, proficiencyInJava, studentId, gender);
-        //System.out.println("constructor TAStudent");
     }
 
     @Override
@@ -32,7 +31,7 @@ public class TAStudent extends Student {
         }
     }
 
-    public void setSupportTask(CourseGrade.Course course, String taskDescription) {
+    public void setSupportTask(Course course, String taskDescription) {
         supportTasks.add(new SupportTask(course, taskDescription));
     }
 

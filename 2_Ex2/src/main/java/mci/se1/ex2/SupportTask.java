@@ -2,9 +2,9 @@ package mci.se1.ex2;
 
 public class SupportTask {
     private String taskDescription;
-    private CourseGrade.Course course;
+    private Course course;
 
-    public SupportTask(CourseGrade.Course course, String description) {
+    public SupportTask(Course course, String description) {
         this.course = course;
         this.taskDescription = description;
     }

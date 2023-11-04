@@ -13,8 +13,8 @@ public class Main {
         try{
             testex9.enterTwoNumbers(scanner);
             Student[] students = testStudent.createStudentArray(scanner);
-            // static array for debugging
-            /*
+
+            /* static array for debugging
             Student[] students = {
                     new Student("Student 1", 1, 9, 1, Student.Gender.male),
                     new Student("Student  2", 2, 9, 2, Student.Gender.male),
