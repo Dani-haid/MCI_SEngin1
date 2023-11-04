@@ -10,6 +10,10 @@ public class Main {
 
         TestStudent testStudent = new TestStudent();
 
+        TAStudent taStudent = new TAStudent("Assistant", 3, 5, 6, Student.Gender.male);
+        taStudent.setSupportTask(new Course(Course.CourseName.GPN), "very important Task");
+        taStudent.printSupportTasks();
+
         try{
             testex9.enterTwoNumbers(scanner);
             Student[] students = testStudent.createStudentArray(scanner);
