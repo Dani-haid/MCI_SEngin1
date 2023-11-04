@@ -6,11 +6,19 @@ public class Main {
 
     public static void main(String[] args) {
         TestStudent testStudent = new TestStudent();
-        Student[] students = testStudent.createStudentArray();
-        testStudent.printStudentArray(students);
-
-
-
+        Scanner scanner = new Scanner(System.in);
+        try{
+            //Student[] students = testStudent.createStudentArray(scanner);
+            Student[] students = {
+                    new Student("Student 1", 1, 9, 1, Student.Gender.male),
+                    new Student("Student  2", 2, 9, 2, Student.Gender.male),
+                    new Student("Student  3", 2, 9, 4, Student.Gender.female),
+                    new Student("Sudent  4", 4, 9, 5, Student.Gender.male),
+                    new Student("Student  5", 5, 9, 6, Student.Gender.female),
+                    new Student("Student  6", 1, 9, 7, Student.Gender.unknown),
+            };
+            //testStudent.printStudentArray(students);
+            testStudent.nrObjsToDisplay(students, scanner);
 
 /*
         Student testStudent = new Student("Ib One", 1, 9, 8, Student.Gender.male);
@@ -25,14 +33,10 @@ public class Main {
 
         PhDStudent phdTest = new PhDStudent("Phd Student", 4, 9, 22, Student.Gender.male, Student.Degree.Master, Student.Degree.Doctor, false);
 */
-/*
-        Scanner scanner = new Scanner(System.in);
-        Student abc = new Student(scanner);
-        System.out.println(abc.toString());
-        */
-        //scanner1.close();
-
-
-        System.out.println("Done!");
+        }
+        finally{
+            scanner.close();
+            System.out.println("Done!");
+        }
     }
 }
