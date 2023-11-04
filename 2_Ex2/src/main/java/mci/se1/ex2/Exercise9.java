@@ -1,6 +1,5 @@
 package mci.se1.ex2;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Exercise9 {
@@ -19,7 +18,8 @@ public class Exercise9 {
                 if(b == 0){
                     throw new ArithmeticException();
                 }
-                System.out.println("Thanks, the Input was: a=" + a + " b=" + b);
+                float result = (float)a/b;
+                System.out.println("Thanks, the result of: " + a + " divided by " + b + " is: " + result);
                 break;
             }
             catch (NumberFormatException e){
