@@ -4,22 +4,64 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * Test the student Class.
-
- */
 public class TestStudent {
-
+    public static final int MAX_STUDENT_NUMBER = 20;
     public static void main(String[] args) {
         // Assignment 1, Exercise 2
         // array with Student Objects
+        /*
         Student[] students = {
-                new Student("Ib One", 1, 9, 1, Student.Gender.Male),
-                new Student("Lisa Two", 1, 2, Student.Gender.Female),
-                new Student("Ole Threee", 2, 2, Student.Gender.Male),
-                new Student("Leo Four", 2, 3, Student.Gender.Male),
-                new Student("Pia Five", 3, 5, Student.Gender.Female),
+                new Student("Ib One", 1, 9, 1, Student.Gender.male),
+                new Student("Lisa Two", 1, 2, Student.Gender.female),
+                new Student("Ole Threee", 2, 2, Student.Gender.male),
+                new Student("Leo Four", 2, 3, Student.Gender.male),
+                new Student("Pia Five", 3, 5, Student.Gender.female),
         };
+        */
+
+        // asking user about how many students for array
+        int nrStud;
+        System.out.println("How many Students would you like to create?");
+
+        Scanner scanner1 = new Scanner(System.in);
+        while(true){
+            String nrStudString = scanner1.nextLine();
+            try{
+                int nrStudTemp = Integer.parseInt(nrStudString);
+                if(nrStudTemp >= 1 && nrStudTemp <= MAX_STUDENT_NUMBER){
+                    nrStud = nrStudTemp;
+                    break;
+                }else{
+                    System.out.println("Please insert a value between 1 and " + MAX_STUDENT_NUMBER);
+                }
+            }
+            catch (NumberFormatException e){
+                System.out.println("Invalid input. Please insert an integer value between 1 and " + MAX_STUDENT_NUMBER);
+            }
+        }
+        //scanner1.close();
+
+        // creating Student array
+        Student[] myStudents = new Student[nrStud];
+        /*
+        for (Student element : myStudents){
+            System.out.print(element + " ");
+        }
+        System.out.println("\n");
+        */
+        // filling up array with Student information
+        for (int i = 0; i < myStudents.length; i++){
+            myStudents[i] = new Student(scanner1);
+        }
+        System.out.println("\n");
+
+        // printing out generated students
+        for (Student element : myStudents){
+            System.out.print(element.toString());
+            System.out.println("\n");
+        }
+        System.out.println("\n");
+
 
         //
 
@@ -57,25 +99,27 @@ public class TestStudent {
         */
 
 
-
-        Student testStudent = new Student("Ib One", 1, 9, 8, Student.Gender.Male);
+/*
+        Student testStudent = new Student("Ib One", 1, 9, 8, Student.Gender.male);
         testStudent.getCourseGrades().add(new CourseGrade(CourseGrade.Course.GPN, 12));
         testStudent.getCourseGrades().add(new CourseGrade(CourseGrade.Course.OOP, 7));
 
-        TAStudent tatest = new TAStudent("Testoo", 3, 7, 11, Student.Gender.Female);
+        TAStudent tatest = new TAStudent("Testoo", 3, 7, 11, Student.Gender.female);
         tatest.setSupportTask(CourseGrade.Course.OOP, "to be done: testTask Description!");
         tatest.setSupportTask(CourseGrade.Course.GPN, "urgent: take a coffee!");
 
         tatest.printSupportTasks();
 
-        PhDStudent phdTest = new PhDStudent("Phd Student", 4, 9, 22, Student.Gender.Male, Student.Degree.Master, Student.Degree.Doctor, false);
-
+        PhDStudent phdTest = new PhDStudent("Phd Student", 4, 9, 22, Student.Gender.male, Student.Degree.Master, Student.Degree.Doctor, false);
+*/
+/*
         Scanner scanner = new Scanner(System.in);
-
         Student abc = new Student(scanner);
-        Student def = new Student(scanner);
+        System.out.println(abc.toString());
+        */
+        scanner1.close();
 
-        scanner.close();
+
 
 /*
         try {

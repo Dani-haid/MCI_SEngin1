@@ -14,7 +14,7 @@ public class PhDStudent extends Student {
 
     public PhDStudent(String name, int group, int proficiencyInJava, int studentId, Gender gender, Degree actualDegree, Degree intendedDegree, boolean teachingSupport){
         super(name, group, proficiencyInJava, studentId, gender);
-        System.out.println("constructor PhDStudent");
+        //System.out.println("constructor PhDStudent");
         if(actualDegree == Degree.Master){
             this.actualDegree = actualDegree;
             this.intendedDegree = intendedDegree;

@@ -6,36 +6,31 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Student implements Cloneable {
-    public enum Gender {Unknown, Male, Female}
+    public enum Gender {unknown, male, female}
     public enum Degree {Unknown, Bachelor, Master, Doctor}
     private String name;
     private int group;
-    private int proficiencyInJava;
+    private int proficiencyInJava; // 1-10
     private int studentId = 0;
-    private Gender gender = Gender.Unknown;
+    private Gender gender = Gender.unknown;
     private static int totalNumberOfStudents = 0;
     private List<CourseGrade> courseGrades = new ArrayList<CourseGrade>();
+    public static final int MAX_GROUP_NUMBER = 99;
 
     // Full constructor
     public Student(String name, int group, int proficiencyInJava, int studentId, Gender gender) {
         this(name, group, proficiencyInJava, gender);
-        System.out.println("Full Konstruktor");
         this.studentId = studentId;
     }
 
     public Student(String name, int group, int proficiencyInJava, Gender gender) {
         this(name);
-        System.out.println("ohne Id Konstruktor");
-
         this.group = group;
         this.proficiencyInJava = proficiencyInJava;
         this.gender = gender;
     }
 
     public Student(String name){
-        //this();
-        System.out.println("name Konstruktor");
-
         this.name = name;
         Student.totalNumberOfStudents++;
         printNewStudent();
@@ -51,11 +46,67 @@ public class Student implements Cloneable {
         System.out.println("Name of the Student: ");
         this.name = scanner.nextLine();
 
-        System.out.println("Group: ");
-        this.group = scanner.nextInt();
+        System.out.println("Group [0-" + MAX_GROUP_NUMBER + "]: ");
+        while(true){
+            String tempGroupString = scanner.nextLine();
+            try{
+                int tempGroup = Integer.parseInt(tempGroupString);
+                if(tempGroup >= 0 && tempGroup <= MAX_GROUP_NUMBER){
+                    this.group = tempGroup;
+                    break;
+                }else{
+                    System.out.println("Please insert a group number between 0 and " + MAX_GROUP_NUMBER);
+                }
+            }
+            catch (NumberFormatException e){
+                System.out.println("Invalid input. Please insert a group number between 0 and " + MAX_GROUP_NUMBER);
+            }
+        }
 
-        System.out.println("Proficeny in Java: ");
-        this.proficiencyInJava = scanner.nextInt();
+        System.out.println("Proficency in Java [1-10]: ");
+        while(true){
+            String tempProficencyString = scanner.nextLine();
+            try{
+                int tempProficency = Integer.parseInt(tempProficencyString);
+                if(tempProficency >= 1 && tempProficency <= 10){
+                    this.proficiencyInJava = tempProficency;
+                    break;
+                }else{
+                    System.out.println("Please insert a proficency value between 1 and 10.");
+                }
+            }
+            catch (NumberFormatException e){
+                System.out.println("Invalid input. Please insert a proficency value between 1 and 10.");
+            }
+        }
+
+        System.out.println("Student Id: ");
+        while(true){
+            String tempStudentIdString = scanner.nextLine();
+            try{
+                int tempStudentId = Integer.parseInt(tempStudentIdString);
+                if(tempStudentId > 0){
+                    this.studentId = tempStudentId;
+                    break;
+                }else{
+                    System.out.println("Please insert a StudentId > 0.");
+                }
+            }
+            catch (NumberFormatException e){
+                System.out.println("Invalid input. Please insert a StudentId > 0.");
+            }
+        }
+
+        System.out.println("Gender [Unknown | Male | Female]: ");
+        String tempGender = scanner.nextLine();
+        tempGender = tempGender.toLowerCase();
+
+        try {
+            this.gender = Gender.valueOf(tempGender);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid gender input. Setting to Unknown.");
+            this.gender = Gender.unknown;
+        }
 
         scanner.nextLine();
 

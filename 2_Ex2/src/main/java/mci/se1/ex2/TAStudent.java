@@ -17,7 +17,7 @@ public class TAStudent extends Student {
     //constructor calling super()
     public TAStudent(String name, int group, int proficiencyInJava, int studentId, Gender gender){
         super(name, group, proficiencyInJava, studentId, gender);
-        System.out.println("constructor TAStudent");
+        //System.out.println("constructor TAStudent");
     }
 
     @Override
