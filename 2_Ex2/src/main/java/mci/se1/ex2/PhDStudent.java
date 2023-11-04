@@ -21,7 +21,6 @@ public class PhDStudent extends Student {
             this.giveTeachingSupport = teachingSupport;
         }else{
             System.out.println("PhD Student needs to have a master degree.");
-            //error handling tbd
         }
     }
 
