@@ -30,7 +30,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>Main</mainClass>
+                            <mainClass>mci/se1/ex2/Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
