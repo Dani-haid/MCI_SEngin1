@@ -50,7 +50,7 @@ public class TestStudent{
     /**
      *
      * prints complete array
-     * @param myStudents
+     * @param myStudents student array
      */
     public void printStudentArray(Student[] myStudents){
         // printing out generated students

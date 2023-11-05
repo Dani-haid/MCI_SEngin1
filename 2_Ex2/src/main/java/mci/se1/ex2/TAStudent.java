@@ -31,6 +31,11 @@ public class TAStudent extends Student {
         }
     }
 
+    /**
+     *
+     * @param course awaits enum value
+     * @param taskDescription string
+     */
     public void setSupportTask(CourseName course, String taskDescription) {
         supportTasks.add(new SupportTask(course, taskDescription));
     }
