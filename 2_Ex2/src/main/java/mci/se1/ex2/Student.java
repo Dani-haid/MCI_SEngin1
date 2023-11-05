@@ -6,13 +6,12 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Student implements Cloneable {
-    public enum Gender {unknown, male, female}
     public enum Degree {Unknown, Bachelor, Master, Doctor}
     private String name;
     private int group;
     private int proficiencyInJava; // 1-10
     private int studentId = 0;
-    private Gender gender = Gender.unknown;
+    private Gender gender = Gender.UNKNOWN;
     private static int totalNumberOfStudents = 0;
     private List<CourseGrade> courseGrades = new ArrayList<CourseGrade>();
     public static final int MAX_GROUP_NUMBER = 99;
@@ -97,18 +96,15 @@ public class Student implements Cloneable {
             }
         }
 
-        System.out.println("Gender [Unknown | Male | Female]: ");
+        System.out.println("Gender [Female | Male | Diverse | Unknown]: ");
         String tempGender = scanner.nextLine();
-        tempGender = tempGender.toLowerCase();
 
         try {
-            this.gender = Gender.valueOf(tempGender);
+            this.gender = Gender.valueOf(tempGender.toUpperCase());
         } catch (IllegalArgumentException e) {
             System.out.println("Invalid gender input. Setting to Unknown.");
-            this.gender = Gender.unknown;
+            this.gender = Gender.UNKNOWN;
         }
-
-        scanner.nextLine();
 
         Student.totalNumberOfStudents++;
         printNewStudent();
@@ -221,6 +217,7 @@ public class Student implements Cloneable {
     public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
+
 
     /** Getter
      * @return  */

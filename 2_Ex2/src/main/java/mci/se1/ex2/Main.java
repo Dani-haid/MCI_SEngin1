@@ -10,7 +10,9 @@ public class Main {
 
         TestStudent testStudent = new TestStudent();
 
-        TAStudent taStudent = new TAStudent("Assistant", 3, 5, 6, Student.Gender.male);
+        Student myFirstStudent = new Student("Student1", 4, 5, 8, Gender.DIVERSE);
+
+        TAStudent taStudent = new TAStudent("Assistant", 3, 5, 6, Gender.MALE);
         taStudent.setSupportTask(new Course(Course.CourseName.GPN), "very important Task");
         taStudent.printSupportTasks();
 
