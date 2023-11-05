@@ -4,6 +4,14 @@ import java.util.Scanner;
 
 public class TestStudent{
     public static final int MAX_STUDENT_NUMBER = 20;
+
+    /**
+     *
+     * @param scanner
+     * array of size (console input) is beeing created
+     * created array is filled with students (console input)
+     * @return array filled array with students
+     */
     public Student[] createStudentArray(Scanner scanner){
         // asking user how many students should be created
         int nrStud;
@@ -38,6 +46,12 @@ public class TestStudent{
         return myStudents;
     }
 
+
+    /**
+     *
+     * prints complete array
+     * @param myStudents
+     */
     public void printStudentArray(Student[] myStudents){
         // printing out generated students
         for (Student element : myStudents){
@@ -45,6 +59,13 @@ public class TestStudent{
             System.out.println("\n");
         }
     }
+
+    /**
+     * asks for the number of students, the user wants to display
+     * prints out desired students to console
+     * @param myStudents
+     * @param scanner
+     */
     public void nrObjsToDisplay(Student[] myStudents, Scanner scanner){
         int studentArraySize = myStudents.length;
         //Scanner scanner = new Scanner(System.in);

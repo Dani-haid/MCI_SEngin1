@@ -2,6 +2,14 @@ package mci.se1.ex2;
 
 import java.util.Scanner;
 
+/**
+ Write a program that allows entering two numbers a and b
+ and displays the result of a/b. The following two conditions must hold:
+ - a and b are entered as integer values
+ - If either a or b are not integer values, your code must throw a NumberFormatException exception
+ - If b is zero your code must throw an ArithmeticException
+ - Anytime an exception is thrown, a message must be displayed on the console
+ */
 public class Exercise9 {
     public void enterTwoNumbers(Scanner scanner){
         int a, b;

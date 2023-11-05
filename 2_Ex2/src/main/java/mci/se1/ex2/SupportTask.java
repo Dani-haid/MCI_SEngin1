@@ -1,5 +1,9 @@
 package mci.se1.ex2;
 
+/**
+ * hold a taskDescription
+ * and is assigned to a course
+ */
 public class SupportTask {
     private String taskDescription;
     private CourseName courseName;

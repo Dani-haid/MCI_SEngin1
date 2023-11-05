@@ -9,13 +9,15 @@ assigned teaching support as well
 
 public class PhDStudent extends Student {
     private Degree currentDegree = Degree.Unknown;
+    private CourseName currentDegreeIn;
     private Degree intendedDegree = Degree.Unknown;
     boolean giveTeachingSupport;
 
-    public PhDStudent(String name, int group, int proficiencyInJava, int studentId, Gender gender, Degree currentDegree, Degree intendedDegree, boolean teachingSupport){
+    public PhDStudent(String name, int group, int proficiencyInJava, int studentId, Gender gender, Degree currentDegree, CourseName currentDegreeIn, Degree intendedDegree, boolean teachingSupport){
         super(name, group, proficiencyInJava, studentId, gender);
         if(currentDegree == Degree.Master){
             this.currentDegree = currentDegree;
+            this.currentDegreeIn =currentDegreeIn;
             this.intendedDegree = intendedDegree;
             this.giveTeachingSupport = teachingSupport;
         }else{
@@ -35,6 +37,10 @@ public class PhDStudent extends Student {
 
     public void setActualDegree(Degree actualDegree) {
         this.currentDegree = actualDegree;
+    }
+
+    public CourseName getCurrentDegreeIn() {
+        return currentDegreeIn;
     }
 
     public Degree getIntendedDegree() {

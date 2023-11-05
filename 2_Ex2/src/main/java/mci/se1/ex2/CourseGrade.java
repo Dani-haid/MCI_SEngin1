@@ -1,5 +1,8 @@
 package mci.se1.ex2;
 
+/**
+ * holds courseName and grade
+ */
 public class CourseGrade {
     private CourseName courseName;
     private int grade;
@@ -9,16 +12,9 @@ public class CourseGrade {
         this.grade = grade;
     }
 
-
     public CourseName getCourse() {
         return courseName;
     }
-    /*
-
-    public void setCourse(CourseName course) {
-        this.course = course;
-    }
-    */
 
     public int getGrade() {
         return grade;

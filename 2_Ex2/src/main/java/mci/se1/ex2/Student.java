@@ -3,7 +3,6 @@ package mci.se1.ex2;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Scanner;
 
 public class Student{
     public enum Degree {Unknown, Bachelor, Master, Doctor}
@@ -101,6 +100,9 @@ public class Student{
         return getProficiencyInJava() == anotherStudent.getProficiencyInJava();
     }
 
+    /**
+     * prints new students, is called in constructor
+     */
     protected void printNewStudent(){
         System.out.println("New Student " + this.name + " added! There are a total of " + Student.totalNumberOfStudents +  " students");
     }

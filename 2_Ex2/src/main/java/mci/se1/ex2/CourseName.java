@@ -1,17 +1,21 @@
 package mci.se1.ex2;
 
+/**
+ * enum with CourseNames
+ * referenced in CourseGrade and SupportTask
+ */
 public enum CourseName {
-    OOP ("Object Oriented Programming"),
-    GPN ("Introductory Programming"),
     APN("Advanced Programming"),
-    FED("Frontend Developing");
+    FED("Frontend Developing"),
+    GPN("Introductory Programming"),
+    OOP("Object Oriented Programming");
     private String courseName;
 
-    CourseName(String inputCourseName){
+    CourseName(String inputCourseName) {
         this.courseName = inputCourseName;
     }
 
-    public String getCourseName(){
+    public String getCourseName() {
         return courseName;
     }
 }

@@ -2,7 +2,19 @@ package mci.se1.ex2;
 
 import java.util.Scanner;
 
+
+/**
+ * Class to handle input from console
+ * and return a Student Object with values
+ * automatically Student constructor will be called
+ */
 public class ConsoleStudent {
+    /**
+     * @param scanner
+     * asks user for name, group, proficiencyInJava, studentId, Gender
+     * minimal validation
+     * @return Student object
+     */
     public static Student createStudentFromConsole(Scanner scanner){
         System.out.println("New Student will be added, please insert the following values:\n");
         System.out.println("Name of the Student: ");
