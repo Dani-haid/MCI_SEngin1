@@ -18,11 +18,10 @@ public class TestStudent {
                 if(nrStudTemp >= 1 && nrStudTemp <= MAX_STUDENT_NUMBER){
                     nrStud = nrStudTemp;
                     break;
-                }else{
+                } else{
                     System.out.println("Please insert a value between 1 and " + MAX_STUDENT_NUMBER);
                 }
-            }
-            catch (NumberFormatException e){
+            } catch (NumberFormatException e){
                 System.out.println("Invalid input. Please insert an integer value between 1 and " + MAX_STUDENT_NUMBER);
             }
         }
@@ -57,21 +56,18 @@ public class TestStudent {
                 int studentsToDisplay = Integer.parseInt(noDisplayString);
                 if(studentsToDisplay < 1 || studentsToDisplay > studentArraySize){
                     throw new NumberOutOfRangeException();
-                }else{
+                } else{
                     // printing desired number of Students
                     for (int i = 0; i < studentsToDisplay; i++){
                         System.out.println(myStudents[i].toString());
                     }
                     break;
                 }
-            }
-            catch (NumberFormatException e){
+            } catch (NumberFormatException e){
                 System.out.println("Invalid input. Please insert an integer value between 1 and " + studentArraySize);
-            }
-            catch (NumberOutOfRangeException e){
+            } catch (NumberOutOfRangeException e){
                 System.out.println("NumberOutOfRangeException: Invalid Input --> Please insert a value between 1 and " + studentArraySize);
             }
         }
     }
-
 }

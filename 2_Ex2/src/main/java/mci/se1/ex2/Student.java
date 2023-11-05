@@ -53,16 +53,15 @@ public class Student implements Cloneable {
                 if(tempGroup >= 0 && tempGroup <= MAX_GROUP_NUMBER){
                     this.group = tempGroup;
                     break;
-                }else{
+                } else{
                     System.out.println("Please insert a group number between 0 and " + MAX_GROUP_NUMBER);
                 }
-            }
-            catch (NumberFormatException e){
+            } catch (NumberFormatException e){
                 System.out.println("Invalid input. Please insert a group number between 0 and " + MAX_GROUP_NUMBER);
             }
         }
 
-        System.out.println("Proficency in Java [1-10]: ");
+        System.out.println("Proficiency in Java [1-10]: ");
         while(true){
             String tempProficencyString = scanner.nextLine();
             try{
@@ -70,11 +69,10 @@ public class Student implements Cloneable {
                 if(tempProficency >= 1 && tempProficency <= 10){
                     this.proficiencyInJava = tempProficency;
                     break;
-                }else{
+                } else{
                     System.out.println("Please insert a proficency value between 1 and 10.");
                 }
-            }
-            catch (NumberFormatException e){
+            } catch (NumberFormatException e){
                 System.out.println("Invalid input. Please insert a proficency value between 1 and 10.");
             }
         }
@@ -87,11 +85,10 @@ public class Student implements Cloneable {
                 if(tempStudentId > 0){
                     this.studentId = tempStudentId;
                     break;
-                }else{
+                } else{
                     System.out.println("Please insert a StudentId > 0.");
                 }
-            }
-            catch (NumberFormatException e){
+            } catch (NumberFormatException e){
                 System.out.println("Invalid input. Please insert a StudentId > 0.");
             }
         }
@@ -149,7 +146,7 @@ public class Student implements Cloneable {
                 System.out.println("Ids are not the same");
                 return false;
             }
-        }else{
+        } else{
             System.out.println("No StudentId defined");
             return false;
         }
@@ -163,9 +160,9 @@ public class Student implements Cloneable {
     public float averageNote() {
         float average = 0.0f;
         for(CourseGrade grade : courseGrades) {
-            average += (float)grade.getGrade() / courseGrades.size();
+            average += grade.getGrade();
         }
-        return average;
+        return average/courseGrades.size() ;
     }
 
 
@@ -186,8 +183,7 @@ public class Student implements Cloneable {
             myClone.gender = this.gender;
             myClone.studentId = this.studentId;
             return(myClone);
-        }
-        catch (CloneNotSupportedException ex) {
+        } catch (CloneNotSupportedException ex) {
             throw new InternalError(ex.toString());
         }
 

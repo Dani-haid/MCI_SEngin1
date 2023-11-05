@@ -21,11 +21,9 @@ public class Exercise9 {
                 float result = (float)a/b;
                 System.out.println("Thanks, the result of: " + a + " divided by " + b + " is: " + result);
                 break;
-            }
-            catch (NumberFormatException e){
+            } catch (NumberFormatException e){
                 System.out.println("Invalid input. Please insert an integer value.");
-            }
-            catch (ArithmeticException e){
+            } catch (ArithmeticException e){
                 System.out.println("Invalid input. Value [b] shouldn't be 0.");
             }
         }

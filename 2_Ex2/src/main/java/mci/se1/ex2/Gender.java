@@ -5,7 +5,6 @@ public enum Gender {
     MALE("male"),
     DIVERSE("diverse"),
     UNKNOWN("unknown");
-
     private String gender;
     Gender(String inputGender){
         this.gender = inputGender;

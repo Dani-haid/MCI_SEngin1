@@ -8,15 +8,14 @@ assigned teaching support as well
  */
 
 public class PhDStudent extends Student {
-    private Degree actualDegree = Degree.Unknown;
+    private Degree currentDegree = Degree.Unknown;
     private Degree intendedDegree = Degree.Unknown;
     boolean giveTeachingSupport;
 
-    public PhDStudent(String name, int group, int proficiencyInJava, int studentId, Gender gender, Degree actualDegree, Degree intendedDegree, boolean teachingSupport){
+    public PhDStudent(String name, int group, int proficiencyInJava, int studentId, Gender gender, Degree currentDegree, Degree intendedDegree, boolean teachingSupport){
         super(name, group, proficiencyInJava, studentId, gender);
-        //System.out.println("constructor PhDStudent");
-        if(actualDegree == Degree.Master){
-            this.actualDegree = actualDegree;
+        if(currentDegree == Degree.Master){
+            this.currentDegree = currentDegree;
             this.intendedDegree = intendedDegree;
             this.giveTeachingSupport = teachingSupport;
         }else{
@@ -31,11 +30,11 @@ public class PhDStudent extends Student {
     }
 
     public Degree getActualDegree() {
-        return actualDegree;
+        return currentDegree;
     }
 
     public void setActualDegree(Degree actualDegree) {
-        this.actualDegree = actualDegree;
+        this.currentDegree = actualDegree;
     }
 
     public Degree getIntendedDegree() {
@@ -53,5 +52,4 @@ public class PhDStudent extends Student {
     public void setGiveTeachingSupport(boolean giveTeachingSupport) {
         this.giveTeachingSupport = giveTeachingSupport;
     }
-
 }
