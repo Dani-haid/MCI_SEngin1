@@ -2,14 +2,14 @@ package mci.se1.ex2;
 
 public class SupportTask {
     private String taskDescription;
-    private Course course;
+    private CourseName courseName;
 
-    public SupportTask(Course course, String description) {
-        this.course = course;
+    public SupportTask(CourseName course, String description) {
+        this.courseName = course;
         this.taskDescription = description;
     }
 
     public void printTask(){
-        System.out.println("Task: " + taskDescription + " for course: "  + course);
+        System.out.println("Task: " + taskDescription + " for course: "  + courseName);
     }
 }

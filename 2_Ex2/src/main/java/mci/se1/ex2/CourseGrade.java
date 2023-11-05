@@ -1,21 +1,24 @@
 package mci.se1.ex2;
 
 public class CourseGrade {
-    private Course course;
+    private CourseName courseName;
     private int grade;
 
-    public CourseGrade(Course course, int grade) {
-        this.course = course;
+    public CourseGrade(CourseName course, int grade) {
+        this.courseName = course;
         this.grade = grade;
     }
 
-    public Course getCourse() {
-        return course;
-    }
 
-    public void setCourse(Course course) {
+    public CourseName getCourse() {
+        return courseName;
+    }
+    /*
+
+    public void setCourse(CourseName course) {
         this.course = course;
     }
+    */
 
     public int getGrade() {
         return grade;

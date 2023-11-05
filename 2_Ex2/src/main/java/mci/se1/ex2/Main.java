@@ -11,13 +11,13 @@ public class Main {
         TestStudent testStudent = new TestStudent();
 
         Student myFirstStudent = new Student("Student1", 4, 5, 8, Gender.DIVERSE);
-        myFirstStudent.getCourseGrades().add(new CourseGrade(new Course(Course.CourseName.OOP), 12));
-        myFirstStudent.getCourseGrades().add(new CourseGrade(new Course(Course.CourseName.GPN), 3));
+        myFirstStudent.getCourseGrades().add(new CourseGrade(CourseName.GPN, 12));
+        myFirstStudent.getCourseGrades().add(new CourseGrade(CourseName.GPN, 3));
 
         System.out.println(myFirstStudent.averageNote());
 
         TAStudent taStudent = new TAStudent("Assistant", 3, 5, 6, Gender.MALE);
-        taStudent.setSupportTask(new Course(Course.CourseName.GPN), "very important Task");
+        taStudent.setSupportTask(CourseName.GPN, "very important Task");
         taStudent.printSupportTasks();
 
         try{

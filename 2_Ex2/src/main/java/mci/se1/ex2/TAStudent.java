@@ -31,7 +31,7 @@ public class TAStudent extends Student {
         }
     }
 
-    public void setSupportTask(Course course, String taskDescription) {
+    public void setSupportTask(CourseName course, String taskDescription) {
         supportTasks.add(new SupportTask(course, taskDescription));
     }
 
