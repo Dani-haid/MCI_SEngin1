@@ -2,7 +2,7 @@ package mci.se1.ex2;
 
 import java.util.Scanner;
 
-public class TestStudent {
+public class TestStudent{
     public static final int MAX_STUDENT_NUMBER = 20;
     public Student[] createStudentArray(Scanner scanner){
         // asking user how many students should be created
@@ -31,7 +31,8 @@ public class TestStudent {
 
         // filling up array with Student information
         for (int i = 0; i < myStudents.length; i++){
-            myStudents[i] = new Student(scanner);
+            //myStudents[i] = new Student(scanner);
+            myStudents[i] = ConsoleStudent.createStudentFromConsole(scanner);
         }
         System.out.println("\n");
         return myStudents;
