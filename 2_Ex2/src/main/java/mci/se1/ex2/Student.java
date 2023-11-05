@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Student implements Cloneable {
+public class Student{
     public enum Degree {Unknown, Bachelor, Master, Doctor}
     private String name;
     private int group;
@@ -165,35 +165,6 @@ public class Student implements Cloneable {
         return average/courseGrades.size() ;
     }
 
-
-    /**
-     * Clone student with a deep copy
-     * @return The student clone
-     * @throws java.lang.CloneNotSupportedException
-     */
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-
-        try {
-            Student myClone = new Student();
-            super.clone();
-            myClone.name = this.name;
-            myClone.group = this.group;
-            myClone.proficiencyInJava = this.proficiencyInJava;
-            myClone.gender = this.gender;
-            myClone.studentId = this.studentId;
-            return(myClone);
-        } catch (CloneNotSupportedException ex) {
-            throw new InternalError(ex.toString());
-        }
-
-    }
-
-    /**
-     * Test if this student equals another student with regards to fluency
-     * @param anotherStudent The other student
-     * @return True if the proficiencies are equal
-     */
     public boolean hasSameFluencyInJavaAs(Student anotherStudent) {
         return getProficiencyInJava() == anotherStudent.getProficiencyInJava();
     }
