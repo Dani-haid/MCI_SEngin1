@@ -30,7 +30,7 @@ public class PeriodicTable {
         System.out.println("Printing All existing Elements:\n");
         for (ChemicalElement element : elementList) {
             if(element != null && element.getAtomicNumber()!= 0){
-                System.out.println("Printing Element| Ordnungszahl:" + element.getAtomicNumber()
+                System.out.println("Atomic Number:" + element.getAtomicNumber()
                         + " Symbol:" + element.getSymbol() + " Name:" + element.getName());
             }
         }
