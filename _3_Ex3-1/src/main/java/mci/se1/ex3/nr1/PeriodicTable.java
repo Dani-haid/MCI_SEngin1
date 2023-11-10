@@ -11,7 +11,7 @@ public class PeriodicTable {
     // private Constructor for Singleton Pattern
     private PeriodicTable(){
 
-    };
+    }
     public static PeriodicTable getInstance(){
         if(instance == null){
             instance = new PeriodicTable();
@@ -20,13 +20,14 @@ public class PeriodicTable {
     }
 
     public void addToTable(ChemicalElement element){
-        /**
+        /*
          * exception handling tbd
          */
         elementList[element.getAtomicNumber()] = element;
     }
 
-    public void printElements(){
+    public void printAllElements(){
+        System.out.println("Printing All existing Elements:\n");
         for (ChemicalElement element : elementList) {
             if(element != null && element.getAtomicNumber()!= 0){
                 System.out.println("Printing Element| Ordnungszahl:" + element.getAtomicNumber()

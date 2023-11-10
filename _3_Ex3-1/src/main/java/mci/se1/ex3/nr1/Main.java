@@ -6,7 +6,7 @@ public class Main {
         myPeriodicTable.addToTable(new ChemicalElement("Wasserstoff", "H", 1));
         myPeriodicTable.addToTable(new ChemicalElement("Phosphor", "P", 15));
 
-        myPeriodicTable.printElements();
+        myPeriodicTable.printAllElements();
 
 
     }

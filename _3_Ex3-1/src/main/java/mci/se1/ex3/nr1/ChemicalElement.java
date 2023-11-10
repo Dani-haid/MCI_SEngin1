@@ -3,8 +3,7 @@ package mci.se1.ex3.nr1;
 public class ChemicalElement {
     private String name;
     private String symbol;
-
-    private int atomicNumber;
+    final private int atomicNumber;
 
     /**
      * implement Builder Pattern tbd!
@@ -23,7 +22,6 @@ public class ChemicalElement {
         return atomicNumber;
     }
 
-
     /**
      * getter
      * @return name
@@ -34,9 +32,23 @@ public class ChemicalElement {
 
     /**
      * getter
-     * @return
+     * @return symbol
      */
     public String getSymbol() {
         return symbol;
+    }
+
+    /**
+     * @param name setter
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @param symbol setter
+     */
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
     }
 }
