@@ -1,7 +1,6 @@
 package mci.se1.ex3.nr1;
 
 import java.util.Scanner;
-
 public class ConsoleInputElement {
     public static int checkInputSize(){
         int inputElements = 0;
