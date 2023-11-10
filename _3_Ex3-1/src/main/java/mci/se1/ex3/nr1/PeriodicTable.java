@@ -36,6 +36,11 @@ public class PeriodicTable {
         }
     }
 
+
+    /**
+     *
+     * @param index from element which should be printed
+     */
     public void printElementAtIndex(int index){
         System.out.println("Trying to print Element with atomic number "  + index);
         if(elementList[index] == null || elementList[index].getAtomicNumber()== 0){
