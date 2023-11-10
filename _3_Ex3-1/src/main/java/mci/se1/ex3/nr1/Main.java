@@ -9,12 +9,13 @@ public class Main {
         int inputElements = ConsoleInputElement.checkInputSize();
 
         for (int i = 0; i < inputElements; i++){
-            myPeriodicTable.addToTable(ConsoleInputElement.addNewInputElement());
+            try {
+                myPeriodicTable.addToTable(ConsoleInputElement.addNewInputElement());
+            } catch (ElementAlreadyExistsException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+
         }
-
-
-        //myPeriodicTable.addToTable(new ChemicalElement("Wasserstoff", "H", 1));
-        //myPeriodicTable.addToTable(new ChemicalElement("Phosphor", "P", 15));
 
         myPeriodicTable.printAllElements();
         myPeriodicTable.printElementAtIndex(8);

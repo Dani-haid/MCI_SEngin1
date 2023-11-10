@@ -2,7 +2,7 @@ package mci.se1.ex3.nr1;
 
 public class PeriodicTable {
     // periodical Table has a fixed number of entries (118) --> so i choose an array
-    // only problem is index 0
+    // index of element is atomicNumber - 1
     ChemicalElement[] elementList = new ChemicalElement[118];
 
     // only 1 instance of Class should be created
@@ -19,11 +19,15 @@ public class PeriodicTable {
         return instance;
     }
 
-    public void addToTable(ChemicalElement element){
-        /*
-         * exception handling tbd
-         */
-        elementList[element.getAtomicNumber()] = element;
+    public void addToTable(ChemicalElement element) throws ElementAlreadyExistsException {
+        int index = (element.getAtomicNumber())-1;
+        if (elementList[index] != null && elementList[index].getAtomicNumber() != 0) {
+            //System.out.println("Element already exists");
+            throw new ElementAlreadyExistsException("Error, this element already exists in periodic table.");
+        } else {
+            //element is added to List at index atomicNumber -1 (cause 0 indexed array)
+            elementList[index] = element;
+        }
     }
 
     public void printAllElements(){
@@ -38,10 +42,11 @@ public class PeriodicTable {
 
     /**
      *
-     * @param index from element which should be printed
+     * @param atomicNumber from element which should be printed
      */
-    public void printElementAtIndex(int index){
-        System.out.println("Trying to print Element with atomic number "  + index);
+    public void printElementAtIndex(int atomicNumber){
+        int index = atomicNumber-1;
+        System.out.println("Trying to print Element with atomic number "  + atomicNumber);
         if(elementList[index] == null || elementList[index].getAtomicNumber()== 0){
             //exception tbd
             System.out.println("Element couldn't be printed");
