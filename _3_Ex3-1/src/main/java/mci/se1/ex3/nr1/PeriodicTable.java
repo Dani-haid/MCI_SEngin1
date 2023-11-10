@@ -36,7 +36,6 @@ public class PeriodicTable {
         }
     }
 
-
     /**
      *
      * @param index from element which should be printed
