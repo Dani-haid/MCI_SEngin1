@@ -73,7 +73,7 @@ public class ConsoleHelper {
     public static int checkPrintElement(){
         int printElement;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Atomic number of element which should be printed:");
+        System.out.println("Atomic number of element, which should be printed:");
 
         while (true) {
             String printElementStr = scanner.nextLine();
