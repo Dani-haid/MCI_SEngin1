@@ -1,4 +1,4 @@
-package mci.se1.ex3.nr3.factory;
+package mci.se1.ex3.nr3.factory.drink;
 
 public class Cappuccino implements Drink{
     @Override
