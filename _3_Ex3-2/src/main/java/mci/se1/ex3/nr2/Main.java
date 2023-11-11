@@ -9,7 +9,7 @@ public class Main {
 
         int hour = LocalTime.now().getHour();
         // hardcoded input for dev
-        //int hour = 7;
+        //int hour = 22;
 
         if(hour >= 6 && hour <= 15){
             // Create Coffee
@@ -22,7 +22,6 @@ public class Main {
         }
 
         System.out.println("The clock says, it's " + hour);
-        automaticMachine.setCurrentDrink(drinkFactory.createDrink());
-        automaticMachine.prepare();
+        automaticMachine.prepare(drinkFactory.createDrink());
     }
 }

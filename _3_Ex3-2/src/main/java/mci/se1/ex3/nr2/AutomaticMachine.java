@@ -4,7 +4,6 @@ package mci.se1.ex3.nr2;
  * creator
  */
 public class AutomaticMachine {
-    private Drink currentDrink;
     private static AutomaticMachine instance;
     public static AutomaticMachine getInstance() {
         if(instance == null){
@@ -12,14 +11,11 @@ public class AutomaticMachine {
         }
         return instance;
     }
-    //private constructor for singleton pattern
-    private AutomaticMachine(){}
-
-    public void setCurrentDrink(Drink currentDrink) {
-        this.currentDrink = currentDrink;
+    private AutomaticMachine(){
+        //private constructor for singleton pattern
     }
 
-    public void prepare(){
-        currentDrink.prepare();
+    public void prepare(Drink drink){
+        drink.prepare();
     }
 }
