@@ -3,8 +3,8 @@ package mci.se1.ex3.nr2;
 /**
  * creator
  */
-public abstract class AutomaticMachine {
-    /*
+public class AutomaticMachine {
+    private Drink currentDrink;
     private static AutomaticMachine instance;
     public static AutomaticMachine getInstance() {
         if(instance == null){
@@ -14,13 +14,12 @@ public abstract class AutomaticMachine {
     }
     //private constructor for singleton pattern
     private AutomaticMachine(){}
-    */
 
-    public abstract Drink createDrink();
+    public void setCurrentDrink(Drink currentDrink) {
+        this.currentDrink = currentDrink;
+    }
 
-    public void orderDrink(){
-        Drink drink = createDrink();
-        drink.prepare();
-        //return drink;
+    public void prepare(){
+        currentDrink.prepare();
     }
 }

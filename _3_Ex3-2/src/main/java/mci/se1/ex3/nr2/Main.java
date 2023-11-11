@@ -1,28 +1,28 @@
 package mci.se1.ex3.nr2;
 
-import java.util.Date;
+import java.time.*;
 
 public class Main {
     public static void main(String[] args) {
-        AutomaticMachine automaticMachine = null;
+        AutomaticMachine automaticMachine = AutomaticMachine.getInstance();
+        DrinkFactory drinkFactory;
 
-        Date d = new Date();
-        int hour = d.getHours();
-
+        int hour = LocalTime.now().getHour();
         // hardcoded input for dev
-        //int hour = 2;
+        //int hour = 7;
 
         if(hour >= 6 && hour <= 15){
             // Create Coffee
-            automaticMachine = new CoffeeCreator();
+            drinkFactory = new CoffeeCreator();
         } else if (hour >= 16 && hour <= 21) {
             // Create Tea
-            automaticMachine = new TeaCreator();
+            drinkFactory = new TeaCreator();
         } else{
-            automaticMachine = new WaterCreator();
+            drinkFactory = new WaterCreator();
         }
 
         System.out.println("The clock says, it's " + hour);
-        automaticMachine.orderDrink();
+        automaticMachine.setCurrentDrink(drinkFactory.createDrink());
+        automaticMachine.prepare();
     }
 }
