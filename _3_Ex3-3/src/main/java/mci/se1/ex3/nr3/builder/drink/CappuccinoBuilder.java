@@ -15,27 +15,27 @@ public class CappuccinoBuilder implements DrinkBuilder{
         this.size = "medium";
     }
 
-    public CappuccinoBuilder addCream(){
+    public CappuccinoBuilder cream(){
         this.cream = true;
         return this;
     }
 
-    public CappuccinoBuilder addMilk(){
+    public CappuccinoBuilder milk(){
         this.milk = true;
         return this;
     }
 
-    public CappuccinoBuilder addSugar(){
+    public CappuccinoBuilder sugar(){
         this.sugar = true;
         return this;
     }
 
-    public CappuccinoBuilder setTemperature(String temperature){
+    public CappuccinoBuilder temperature(String temperature){
         this.temperature = temperature;
         return this;
     }
 
-    public CappuccinoBuilder setSize(String size){
+    public CappuccinoBuilder size(String size){
         this.size = size;
         return this;
     }

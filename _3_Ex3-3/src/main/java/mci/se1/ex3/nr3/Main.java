@@ -9,30 +9,28 @@ public class Main {
 
         DrinkBuilder capuBuilder = new CappuccinoBuilder();
         Drink capu = capuBuilder
-                .addCream()
-                .addMilk()
-                .setSize("small")
+                .cream()
+                .milk()
+                .size("small")
                 .build();
 
-        capu.prepare();
+        automaticMachine.prepare(capu);
 
         DrinkBuilder americanoBuilder = new AmericanoBuilder();
         Drink americano = americanoBuilder
-                .addMilk()
-                .addSugar()
-                .setTemperature("cold")
+                .milk()
+                .sugar()
+                .temperature("cold")
                 .build();
 
-        americano.prepare();
+        automaticMachine.prepare(americano);
 
         DrinkBuilder espressoBuilder = new EspressoBuilder();
         Drink espresso = espressoBuilder
-                .addSugar()
-                .setSize("medium")
+                .sugar()
+                .size("medium")
                 .build();
 
-        espresso.prepare();
-
-
+        automaticMachine.prepare(espresso);
     }
 }

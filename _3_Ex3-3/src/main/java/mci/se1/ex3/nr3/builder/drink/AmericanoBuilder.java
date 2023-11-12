@@ -14,24 +14,24 @@ public class AmericanoBuilder implements DrinkBuilder{
         this.temperature = "hot";
         this.size = "small";
     }
-    public AmericanoBuilder addCream(){
+    public AmericanoBuilder cream(){
         this.cream = true;
         return this;
     }
-    public AmericanoBuilder addMilk(){
+    public AmericanoBuilder milk(){
         this.milk = true;
         return this;
     }
-    public AmericanoBuilder addSugar(){
+    public AmericanoBuilder sugar(){
         this.sugar = true;
         return this;
     }
-    public AmericanoBuilder setTemperature(String temperature){
+    public AmericanoBuilder temperature(String temperature){
         this.temperature = temperature;
         return this;
     }
 
-    public AmericanoBuilder setSize(String size){
+    public AmericanoBuilder size(String size){
         this.size = size;
         return this;
     }

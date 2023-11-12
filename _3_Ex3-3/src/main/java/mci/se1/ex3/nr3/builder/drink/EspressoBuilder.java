@@ -15,23 +15,23 @@ public class EspressoBuilder implements DrinkBuilder {
         this.size = "large";
     }
 
-    public EspressoBuilder addCream(){
+    public EspressoBuilder cream(){
         this.cream = true;
         return this;
     }
-    public EspressoBuilder addMilk(){
+    public EspressoBuilder milk(){
         this.milk = true;
         return this;
     }
-    public EspressoBuilder addSugar(){
+    public EspressoBuilder sugar(){
         this.sugar = true;
         return this;
     }
-    public EspressoBuilder setTemperature(String temperature){
+    public EspressoBuilder temperature(String temperature){
         this.temperature = temperature;
         return this;
     }
-    public EspressoBuilder setSize(String size){
+    public EspressoBuilder size(String size){
         this.size = size;
         return this;
     }
