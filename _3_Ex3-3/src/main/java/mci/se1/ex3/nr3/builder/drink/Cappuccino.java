@@ -1,13 +1,17 @@
 package mci.se1.ex3.nr3.builder.drink;
 
+import java.util.ArrayList;
+
 public class Cappuccino implements Drink {
     private final boolean cream;
     private final boolean milk;
     private final boolean sugar;
-    private final String temperature;
-    private final String size;
+    private final DrinkTemperature temperature;
+    private final DrinkSize size;
+    ArrayList<String> extras = new ArrayList<String>();
 
-    protected Cappuccino(boolean cream, boolean milk, boolean sugar, String temperature, String size){
+
+    protected Cappuccino(boolean cream, boolean milk, boolean sugar, DrinkTemperature temperature, DrinkSize size){
         this.cream = cream;
         this.milk = milk;
         this.sugar = sugar;
@@ -17,6 +21,15 @@ public class Cappuccino implements Drink {
 
     @Override
     public void prepare(){
-        System.out.println("Here's your Cappuccino.");
+        if(this.cream){
+            extras.add("cream");
+        }
+        if(this.milk){
+            extras.add("milk");
+        }
+        if(this.sugar){
+            extras.add("sugar");
+        }
+        System.out.println("Here's your "+ this.size + ", " + this.temperature + " Cappuccino with " + extras);
     }
 }

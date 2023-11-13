@@ -1,18 +1,22 @@
 package mci.se1.ex3.nr3.builder.drink;
 
+import java.util.ArrayList;
+
 public class AmericanoBuilder implements DrinkBuilder{
     private boolean cream;
     private boolean milk;
     private boolean sugar;
-    private String temperature;
-    private String size;
+    private DrinkTemperature temperature;
+    private DrinkSize size;
+    ArrayList<String> extras = new ArrayList<String>();
+
 
     public AmericanoBuilder(){
         this.cream = false;
         this.milk = false;
         this.sugar = false;
-        this.temperature = "hot";
-        this.size = "small";
+        this.temperature = DrinkTemperature.COLD;
+        this.size = DrinkSize.SMALL;
     }
     public AmericanoBuilder cream(){
         this.cream = true;
@@ -26,12 +30,12 @@ public class AmericanoBuilder implements DrinkBuilder{
         this.sugar = true;
         return this;
     }
-    public AmericanoBuilder temperature(String temperature){
+    public AmericanoBuilder temperature(DrinkTemperature temperature){
         this.temperature = temperature;
         return this;
     }
 
-    public AmericanoBuilder size(String size){
+    public AmericanoBuilder size(DrinkSize size){
         this.size = size;
         return this;
     }

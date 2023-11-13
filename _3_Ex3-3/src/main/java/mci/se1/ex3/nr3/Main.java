@@ -11,7 +11,7 @@ public class Main {
         Drink capu = capuBuilder
                 .cream()
                 .milk()
-                .size("small")
+                .size(DrinkSize.SMALL)
                 .build();
 
         automaticMachine.prepare(capu);
@@ -20,7 +20,7 @@ public class Main {
         Drink americano = americanoBuilder
                 .milk()
                 .sugar()
-                .temperature("cold")
+                .temperature(DrinkTemperature.WARM)
                 .build();
 
         automaticMachine.prepare(americano);
@@ -28,7 +28,7 @@ public class Main {
         DrinkBuilder espressoBuilder = new EspressoBuilder();
         Drink espresso = espressoBuilder
                 .sugar()
-                .size("medium")
+                .size(DrinkSize.MEDIUM)
                 .build();
 
         automaticMachine.prepare(espresso);

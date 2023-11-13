@@ -1,18 +1,22 @@
 package mci.se1.ex3.nr3.builder.drink;
 
+import java.util.ArrayList;
+
 public class EspressoBuilder implements DrinkBuilder {
     private  boolean cream;
     private  boolean milk;
     private  boolean sugar;
-    private  String temperature;
-    private  String size;
+    private  DrinkTemperature temperature;
+    private  DrinkSize size;
+    ArrayList<String> extras = new ArrayList<String>();
+
 
     public EspressoBuilder(){
         this.cream = false;
         this.milk = false;
         this.sugar = false;
-        this.temperature = "hot";
-        this.size = "large";
+        this.temperature = DrinkTemperature.HOT;
+        this.size = DrinkSize.LARGE;
     }
 
     public EspressoBuilder cream(){
@@ -27,11 +31,11 @@ public class EspressoBuilder implements DrinkBuilder {
         this.sugar = true;
         return this;
     }
-    public EspressoBuilder temperature(String temperature){
+    public EspressoBuilder temperature(DrinkTemperature temperature){
         this.temperature = temperature;
         return this;
     }
-    public EspressoBuilder size(String size){
+    public EspressoBuilder size(DrinkSize size){
         this.size = size;
         return this;
     }

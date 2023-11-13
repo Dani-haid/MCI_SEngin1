@@ -1,18 +1,22 @@
 package mci.se1.ex3.nr3.builder.drink;
 
+import java.util.ArrayList;
+
 public class CappuccinoBuilder implements DrinkBuilder{
     private boolean cream;
     private boolean milk;
     private boolean sugar;
-    private String temperature;
-    private String size;
+    private DrinkTemperature temperature;
+    private DrinkSize size;
+    ArrayList<String> extras = new ArrayList<String>();
+
 
     public CappuccinoBuilder(){
         this.cream = false;
         this.milk = false;
         this.sugar = false;
-        this.temperature = "warm"; //Enum tbd
-        this.size = "medium";
+        this.temperature = DrinkTemperature.WARM;
+        this.size = DrinkSize.MEDIUM;
     }
 
     public CappuccinoBuilder cream(){
@@ -30,12 +34,12 @@ public class CappuccinoBuilder implements DrinkBuilder{
         return this;
     }
 
-    public CappuccinoBuilder temperature(String temperature){
+    public CappuccinoBuilder temperature(DrinkTemperature temperature){
         this.temperature = temperature;
         return this;
     }
 
-    public CappuccinoBuilder size(String size){
+    public CappuccinoBuilder size(DrinkSize size){
         this.size = size;
         return this;
     }

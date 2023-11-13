@@ -1,13 +1,17 @@
 package mci.se1.ex3.nr3.builder.drink;
 
+import java.util.ArrayList;
+
 public class Americano implements Drink {
     private final boolean cream;
     private final boolean milk;
     private final boolean sugar;
-    private final String temperature;
-    private final String size;
+    private final DrinkTemperature temperature;
+    private final DrinkSize size;
+    ArrayList<String> extras = new ArrayList<String>();
 
-    protected Americano(boolean cream, boolean milk, boolean sugar, String temperature, String size){
+
+    protected Americano(boolean cream, boolean milk, boolean sugar, DrinkTemperature temperature, DrinkSize size){
         this.cream = cream;
         this.milk = milk;
         this.sugar = sugar;
@@ -16,6 +20,16 @@ public class Americano implements Drink {
     }
     @Override
     public void prepare(){
-        System.out.println("That's an Americano - enjoy.");
+        if(this.cream){
+            extras.add("cream");
+        }
+        if(this.milk){
+            extras.add("milk");
+        }
+        if(this.sugar){
+            extras.add("sugar");
+        }
+
+        System.out.println("There's your " + this.size + " and " + this.temperature + " Americano with "+ extras +  "- enjoy.");
     }
 }
