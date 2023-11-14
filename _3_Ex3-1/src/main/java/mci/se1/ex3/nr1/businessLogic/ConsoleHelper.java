@@ -1,14 +1,19 @@
-package mci.se1.ex3.nr1;
+package mci.se1.ex3.nr1.businessLogic;
 
 import java.util.Scanner;
 public class ConsoleHelper {
-    public static int consoleDecision(){
+    private Scanner scanner;
+
+    public ConsoleHelper(){
+        this.scanner = new Scanner(System.in);
+    }
+    public int consoleDecision(){
         // options could be written as enum in next version
         System.out.println("What would you like to do? enter new elements[1] | print one element[2] | print all elements[3] | exit program[4]");
         int whatsNext;
-        Scanner scanner = new Scanner(System.in);
+
         while (true) {
-            String tempDecisionStr = scanner.nextLine();
+            String tempDecisionStr = this.scanner.nextLine();
             try {
                 whatsNext = Integer.parseInt(tempDecisionStr);
                 if (whatsNext >= 1 && whatsNext <= 4) {
@@ -22,13 +27,12 @@ public class ConsoleHelper {
         }
         return whatsNext;
     }
-    public static int checkInputSize(){
+    public int checkInputSize(){
         int inputElements;
-        Scanner scanner = new Scanner(System.in);
         System.out.println("How many elements would you like to input?");
 
         while (true) {
-            String tempinputElementsStr = scanner.nextLine();
+            String tempinputElementsStr = this.scanner.nextLine();
             try {
                 inputElements = Integer.parseInt(tempinputElementsStr);
                 if (inputElements >= 1 && inputElements <= 118) {
@@ -42,13 +46,12 @@ public class ConsoleHelper {
         }
         return inputElements;
     }
-    public static ChemicalElement addNewInputElement() {
-        Scanner scanner = new Scanner(System.in);
+    public ChemicalElement addNewInputElement() {
         System.out.println("Adding a new chemical element.");
         System.out.println("atomic Number: ");
         int atomicNumber;
         while (true) {
-            String tempNumberString = scanner.nextLine();
+            String tempNumberString = this.scanner.nextLine();
             try {
                 int tempNumber = Integer.parseInt(tempNumberString);
                 if (tempNumber >= 1 && tempNumber <= 118) {
@@ -62,21 +65,20 @@ public class ConsoleHelper {
             }
         }
         System.out.println("Name: ");
-        String name = scanner.nextLine();
+        String name = this.scanner.nextLine();
 
         System.out.println("Symbol: ");
-        String symbol = scanner.nextLine();
+        String symbol = this.scanner.nextLine();
 
         return new ChemicalElement(name, symbol, atomicNumber);
     }
 
-    public static int checkPrintElement(){
+    public int checkPrintElement(){
         int printElement;
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Atomic number of element, which should be printed:");
 
         while (true) {
-            String printElementStr = scanner.nextLine();
+            String printElementStr = this.scanner.nextLine();
             try {
                 printElement = Integer.parseInt(printElementStr);
                 if (printElement >= 1 && printElement <= 118) {
@@ -89,5 +91,9 @@ public class ConsoleHelper {
             }
         }
         return printElement;
+    }
+
+    public void shutdown(){
+        this.scanner.close();
     }
 }

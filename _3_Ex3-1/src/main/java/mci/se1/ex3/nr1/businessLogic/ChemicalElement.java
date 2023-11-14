@@ -1,4 +1,4 @@
-package mci.se1.ex3.nr1;
+package mci.se1.ex3.nr1.businessLogic;
 
 public class ChemicalElement {
     private String name;

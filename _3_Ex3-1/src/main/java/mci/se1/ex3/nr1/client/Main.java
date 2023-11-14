@@ -1,10 +1,15 @@
-package mci.se1.ex3.nr1;
+package mci.se1.ex3.nr1.client;
+
+import mci.se1.ex3.nr1.businessLogic.ConsoleHelper;
+import mci.se1.ex3.nr1.exceptions.ElementAlreadyExistsException;
+import mci.se1.ex3.nr1.exceptions.NoElementFoundException;
+import mci.se1.ex3.nr1.businessLogic.PeriodicTable;
 
 public class Main {
     public static void main(String[] args) {
+        PeriodicTable myPeriodicTable = PeriodicTable.getInstance();
+        ConsoleHelper consoleHelper = new ConsoleHelper();
         try{
-            PeriodicTable myPeriodicTable = PeriodicTable.getInstance();
-
             int whatsNext;
             do{
                 /**
@@ -13,16 +18,16 @@ public class Main {
                  * 3 - print all elements
                  * 4 - exit program
                  */
-                whatsNext = ConsoleHelper.consoleDecision();
+                whatsNext = consoleHelper.consoleDecision();
                 switch (whatsNext) {
                     case 1:
                         // asks user about how many elements should be inserted
-                        int inputElements = ConsoleHelper.checkInputSize();
+                        int inputElements = consoleHelper.checkInputSize();
 
                         // asks about data of each new element and adds it to the table
                         for (int i = 0; i < inputElements; i++){
                             try {
-                                myPeriodicTable.addToTable(ConsoleHelper.addNewInputElement());
+                                myPeriodicTable.addToTable(consoleHelper.addNewInputElement());
                             } catch (ElementAlreadyExistsException e) {
                                 System.out.println("Error: " + e.getMessage());
                             }
@@ -30,7 +35,7 @@ public class Main {
                         System.out.println("Thanks for entering new elements");
                         break;
                     case 2:
-                        int printElement = ConsoleHelper.checkPrintElement();
+                        int printElement = consoleHelper.checkPrintElement();
                         try{
                             // prints only element with atomic number ...
                             myPeriodicTable.printElementAtIndex(printElement);
@@ -53,7 +58,7 @@ public class Main {
 
 
         }finally{
-            //scanner.close();
+            consoleHelper.shutdown();
             System.out.println("Done!");
         }
     }
