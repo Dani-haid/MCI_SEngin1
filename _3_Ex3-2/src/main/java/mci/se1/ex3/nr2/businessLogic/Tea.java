@@ -1,4 +1,4 @@
-package mci.se1.ex3.nr2;
+package mci.se1.ex3.nr2.businessLogic;
 
 public class Tea implements Drink{
     @Override
