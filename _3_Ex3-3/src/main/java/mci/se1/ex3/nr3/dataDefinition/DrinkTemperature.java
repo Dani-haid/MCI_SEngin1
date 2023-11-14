@@ -1,4 +1,4 @@
-package mci.se1.ex3.nr3.builder.drink;
+package mci.se1.ex3.nr3.dataDefinition;
 
 
 public enum DrinkTemperature {

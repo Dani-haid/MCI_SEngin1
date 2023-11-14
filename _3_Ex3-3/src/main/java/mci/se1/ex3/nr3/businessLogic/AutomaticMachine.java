@@ -1,6 +1,4 @@
-package mci.se1.ex3.nr3;
-
-import mci.se1.ex3.nr3.builder.drink.Drink;
+package mci.se1.ex3.nr3.businessLogic;
 
 public class AutomaticMachine {
     private static AutomaticMachine instance;
@@ -15,7 +13,7 @@ public class AutomaticMachine {
     }
 
     public void prepare(Drink drink){
-        drink.prepare();
+        drink.prepareDrink();
     }
 }
 
