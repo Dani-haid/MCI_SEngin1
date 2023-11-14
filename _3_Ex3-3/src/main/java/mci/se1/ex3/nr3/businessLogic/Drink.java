@@ -14,7 +14,7 @@ public class Drink {
     private final DrinkSize size;
     private final Set<String> extras = new HashSet<>(); //so extras can only be added once
 
-    private Drink(MyDrinkBuilder builder) {
+    private Drink(DrinkBuilder builder) {
         this.name = builder.name;
         this.cream = builder.cream;
         this.milk = builder.milk;
@@ -23,7 +23,7 @@ public class Drink {
         this.size = builder.size;
     }
 
-    public static class MyDrinkBuilder {
+    public static class DrinkBuilder {
         private final DrinkName name;
         private boolean cream = false;
         private boolean milk = false;
@@ -31,34 +31,37 @@ public class Drink {
         private DrinkTemperature temperature = DrinkTemperature.WARM;
         private DrinkSize size = DrinkSize.MEDIUM;
 
-        public MyDrinkBuilder(DrinkName name){
+        public DrinkBuilder(DrinkName name){
             this.name = name;
         }
 
-        public MyDrinkBuilder cream(){
+        public DrinkBuilder cream(){
             this.cream = true;
             return this;
         }
-        public MyDrinkBuilder milk(){
+        public DrinkBuilder milk(){
             this.milk = true;
             return this;
         }
-        public MyDrinkBuilder sugar(){
+        public DrinkBuilder sugar(){
             this.sugar = true;
             return this;
         }
 
-        public MyDrinkBuilder temperature(DrinkTemperature temperature){
+        public DrinkBuilder temperature(DrinkTemperature temperature){
             this.temperature = temperature;
             return this;
         }
 
-        public MyDrinkBuilder size(DrinkSize size){
+        public DrinkBuilder size(DrinkSize size){
             this.size = size;
             return this;
         }
 
         public Drink build(){
+            if(name == null){
+                throw new IllegalStateException("You need to set a drink name!");
+            }
             return new Drink(this);
         }
     }

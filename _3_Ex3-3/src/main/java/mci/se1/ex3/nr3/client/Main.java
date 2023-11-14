@@ -8,27 +8,33 @@ public class Main {
         // there's only 1 Machine, get Instance of it
         AutomaticMachine automaticMachine = AutomaticMachine.getInstance();
 
-        Drink capu = new Drink.MyDrinkBuilder(DrinkName.CAPPUCCINO)
-                        .sugar()
-                        .milk()
-                        .temperature(DrinkTemperature.HOT)
-                        .build();
+        try {
 
-        Drink espresso = new Drink.MyDrinkBuilder(DrinkName.ESPRESSO)
-                        .cream()
-                        .sugar()
-                        .size(DrinkSize.SMALL)
-                        .build();
+            Drink capu = new Drink.DrinkBuilder(DrinkName.CAPPUCCINO)
+                    .sugar()
+                    .milk()
+                    .temperature(DrinkTemperature.HOT)
+                    .build();
 
-        Drink americano = new Drink.MyDrinkBuilder(DrinkName.AMERICANO)
-                        .sugar()
-                        .temperature(DrinkTemperature.COLD)
-                        .size(DrinkSize.LARGE)
-                        .build();
+            Drink espresso = new Drink.DrinkBuilder(DrinkName.ESPRESSO)
+                    .cream()
+                    .sugar()
+                    .size(DrinkSize.SMALL)
+                    .build();
 
-        automaticMachine.prepare(capu);
-        automaticMachine.prepare(espresso);
-        automaticMachine.prepare(americano);
+            Drink americano = new Drink.DrinkBuilder(DrinkName.AMERICANO)
+                    .sugar()
+                    .temperature(DrinkTemperature.COLD)
+                    .size(DrinkSize.LARGE)
+                    .build();
+
+            automaticMachine.prepare(capu);
+            automaticMachine.prepare(espresso);
+            automaticMachine.prepare(americano);
+
+        } catch (IllegalStateException e){
+            System.out.println(e.getMessage());
+        }
 
     }
 }
