@@ -4,13 +4,11 @@ import java.time.LocalTime;
 
 public class DrinkFactorySelector {
     public static DrinkFactory selectDrinkFactory(){
-        //int hour = LocalTime.now().getHour();
+        int hour = LocalTime.now().getHour();
         // hardcoded input for dev
-        int hour = 22;
+        //int hour = 22;
 
-        System.out.println("The clock says, it's " + hour);
-
-
+        System.out.println("The clock says, it's " + hour + ":00");
 
         if(hour >= 6 && hour <= 15){
             // Create Coffee

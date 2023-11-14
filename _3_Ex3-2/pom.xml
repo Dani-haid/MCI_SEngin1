@@ -22,7 +22,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>mci/se1/ex3/nr2/Main</mainClass>
+                            <mainClass>mci/se1/ex3/nr2/client/Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
