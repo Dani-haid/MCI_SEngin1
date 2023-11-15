@@ -1,14 +1,16 @@
 package mci.se1.ex4.nr2.businessLogic;
 
-public class BoardMember extends AbstractStaff{
+public class AdminEmployee extends AbstractStaff{
     private final int id;
     private String firstName;
     private String lastName;
+    private String department;
 
-    public BoardMember(int id, String firstName, String lastname){
+    public AdminEmployee(int id, String firstName, String lastName, String department) {
         this.id = id;
         this.firstName = firstName;
-        this.lastName = lastname;
+        this.lastName = lastName;
+        this.department = department;
     }
 
     public int getId() {
@@ -31,9 +33,17 @@ public class BoardMember extends AbstractStaff{
         this.lastName = lastName;
     }
 
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
     @Override
     public void print() {
-        System.out.println("Board Member with id " + id + ": "
-                + firstName + " " + lastName);
+        System.out.println("Admin Employee with id " + id + ": "
+                + firstName + " " + lastName + ", department " + department);
     }
 }
