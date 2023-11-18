@@ -12,7 +12,7 @@ public class LocalNewspaper extends Observer {
     }
 
     @Override
-    public void update() {
-        System.out.println(name + " there are news for you.");
+    public void update(String news) {
+        System.out.println(name + " received the notification.");
     }
 }

@@ -31,9 +31,10 @@ public class ConcreteNewsAgency implements NewsAgencyInterface {
     }
 
     @Override
-    public void notifyObserver() {
+    public void notifyObserver(String news) {
+        System.out.println("following news will be spreaded: " + news);
         for (Observer elements:observers) {
-            elements.update();
+            elements.update(news);
         }
     }
 }

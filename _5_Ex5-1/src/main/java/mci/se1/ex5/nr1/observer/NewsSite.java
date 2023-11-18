@@ -7,7 +7,7 @@ public class NewsSite extends Observer {
         this.name = name;
     }
     @Override
-    public void update() {
-        System.out.println(name + " there are news for you.");
+    public void update(String news) {
+        System.out.println(name + " received the notification.");
     }
 }
