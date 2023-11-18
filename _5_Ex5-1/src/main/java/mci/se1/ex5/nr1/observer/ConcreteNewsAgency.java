@@ -1,20 +1,33 @@
 package mci.se1.ex5.nr1.observer;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ConcreteNewsAgency implements NewsAgencyInterface {
-    private final List<Observer> observers = new ArrayList<>();
+    private Set<Observer> observers;
+
+    public ConcreteNewsAgency(){
+        this.observers = new HashSet<>();
+    }
     @Override
     public void attach(Observer ob) {
-        observers.add(ob);
-        System.out.println("Observer was subscribed");
+        if(ob == null){
+            throw new NullPointerException("Error: Observer is null");
+        }else if(observers.contains(ob)){
+            System.out.println("Observer is already subscribed to news channel");
+        }else{
+            observers.add(ob);
+            System.out.println("Observer was subscribed");
+        }
     }
 
     @Override
     public void detach(Observer ob) {
-        observers.remove(ob);
-        System.out.println("Observer was unsubscribed");
+        if(observers.remove(ob)){
+            System.out.println("Observer was succesfully unsubscribed");
+        }else{
+            System.out.println("Element couldn't be found in List");
+        }
     }
 
     @Override

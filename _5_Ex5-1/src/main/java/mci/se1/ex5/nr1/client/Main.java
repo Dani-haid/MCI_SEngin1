@@ -19,25 +19,30 @@ import mci.se1.ex5.nr1.observer.Observer;
 public class Main {
     public static void main(String[] args) {
         ConcreteNewsAgency apa = new ConcreteNewsAgency();
-        Observer tirolerTageszeitung = new LocalNewspaper();
+        Observer tirolerTageszeitung = new LocalNewspaper("Tiroler Tageszeitung");
         apa.attach(tirolerTageszeitung);
 
         apa.notifyObserver();
         System.out.println("--------");
 
-        Observer sueddeutsche = new LocalNewspaper();
+        Observer sueddeutsche = new LocalNewspaper("Sueddeutsche Zeitung");
         apa.attach(sueddeutsche);
         apa.notifyObserver();
 
         System.out.println("--------");
 
-        Observer fazonline = new NewsSite();
+        Observer fazonline = new NewsSite("www.faz.de");
         apa.attach(fazonline);
         apa.notifyObserver();
 
         System.out.println("--------");
 
+        Observer myNewspapaer = new LocalNewspaper("test");
+
         apa.detach(sueddeutsche);
+        System.out.println("--------");
+        apa.detach(myNewspapaer);
+        System.out.println("--------");
         apa.notifyObserver();
 
     }
